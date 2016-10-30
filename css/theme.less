@@ -1,0 +1,165 @@
+/**
+ * 方块链接
+ */
+@link-square-bg-color: #0072e4;
+@link-square-size: 100px;
+.link-square {
+  position: relative;
+  display: block;
+  width: @link-square-size;
+  height: @link-square-size;
+  text-align: center;
+  color: #fff;
+  background-color: @link-square-bg-color;
+  &:hover {
+    .link-square_icon {
+      font-size: 2.5em;
+      opacity: 1;
+    }
+    .link-square_desc {
+      font-size: 1.15em;
+      opacity: 1;
+    }
+  }
+}
+.link-square_icon {
+  position: absolute;
+  left: 0;
+  bottom: 42px;
+  width: 100%;
+  opacity: 0.8;
+}
+.link-square_desc {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  bottom: 16px;
+  text-align: center;
+  opacity: 0.75;
+}
+
+
+/**
+ * 带图片链接
+ */
+
+@link-img-width: 250px;
+@link-img-height: 300px;
+@link-img-img-height: 150px;
+
+.link-img {
+  position: relative;
+  display: block;
+  width: @link-img-width;
+  height: @link-img-height;
+  &:hover {
+    .link-img_img-wrap {
+      display: none;
+    }
+    .link-img_text {
+      height: 100%;
+    }
+  }
+}
+.link-img_img-wrap {
+  width: 100%;
+  height: @link-img-img-height;
+  background-color: #ccc;
+}
+.link-img_img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.link-img_text {
+  width: 100%;
+  height: @link-img-height - @link-img-img-height;
+  color: #fff;
+  background-color: #999;
+}
+.link-img_title {
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+}
+.link-img_desc {
+  margin: 0;
+  padding: 8px;
+  overflow: hidden;
+}
+
+
+/**
+ * 按钮
+ */
+
+@btn-width: 200px;
+@btn-height: 36px;
+@btn-color: #fff;
+@btn-bg-color: #00aeef;
+@btn-border-width: 2px;
+@btn-border-radius: 2px;
+@btn-border-color: transparent;
+@btn-border-bottom-color: #555;
+@btn-hover-bg-color: #0084c2;
+@btn-line-height: 16px;
+
+.btn {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: ((@btn-height - @btn-line-height) / 2 - @btn-border-width) 0;
+  width: @btn-width;
+  height: @btn-height;
+  font-size: 16px;
+  color: @btn-color;
+  background-color: @btn-bg-color;
+  border: @btn-border-width solid @btn-border-color;
+  border-radius: @btn-border-radius;
+  box-shadow: 0 3px 0 0 rgba(0,0,0,0.5);
+  line-height: 16px;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  outline: 0;
+  cursor: pointer;
+  &:hover {
+    background-color: @btn-hover-bg-color;
+  }
+}
+.btn-no-shadow {
+  box-shadow: none;
+}
+.btn-no-radius {
+  border-radius: 0;
+}
+.btn-green {
+  background-color: #2ea254;
+  &:hover {
+    background-color: #247f47;
+  }
+}
+
+
+
+
+
+
+/**
+ * 字体和背景色
+ */
+
+.c-w { color: #fff; }
+.c-b { color: #000; }
+.bg-blue { background-color: #0072e4; }
+.bg-red { background-color: #d53947; }
+.bg-orange { background-color: #eb5d24; }
+.bg-purple { background-color: #5f588a; }
+.bg-green { background-color: #2ea254; }
+.bg-blue { background-color: #0072e4; }
+.bg-amaranth { background-color: #b5044e; }
+.bg-light-grey { background-color: #dee2e4 }
+.bg-grey { background-color: #abaaaa; }
+.bg-dark-grey { background-color: #6c6c6c; }

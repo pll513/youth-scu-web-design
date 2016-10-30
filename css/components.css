@@ -1,0 +1,11 @@
+.btns {
+  font-size: 0;
+  -webkit-text-size-adjust: none;
+}
+.btns .btn {
+  margin: 10px;
+}
+.link-squares .link-square {
+  float: left;
+  margin-right: 10px;
+}
