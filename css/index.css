@@ -1,0 +1,18 @@
+/*
+ ** 页头
+ */
+.header {
+  height: 140px;
+  background-color: #001e3c;
+}
+.banner {
+  height: 400px;
+  background-color: #777;
+}
+/*
+ ** 页脚
+ */
+.footer {
+  height: 200px;
+  background-color: #001e3c;
+}

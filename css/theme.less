@@ -4,10 +4,10 @@
 @link-square-bg-color: #0072e4;
 @link-square-size: 100px;
 .link-square {
-  position: relative;
   display: block;
   width: @link-square-size;
   height: @link-square-size;
+  position: relative;
   text-align: center;
   color: #fff;
   background-color: @link-square-bg-color;
@@ -37,6 +37,73 @@
   text-align: center;
   opacity: 0.75;
 }
+
+
+/**
+ * 特色方块链接
+ */
+
+@link-square-featured-size: 100px;
+@link-square-featured-color: #fff;
+@link-square-featured-bg-color: #00aeef;
+@link-square-featured-hover-color: #00aeef;
+@link-square-featured-hover-bg-color: #fff;
+@link-square-featured-after-distance: 300px;
+@link-square-featured-before-distance: 100px;
+
+@link-square-featured-bg-color-green: #2ea254;
+@link-square-featured-hover-color-green: #2ea254;
+
+.link-square-featured {
+  display: block;
+  width: @link-square-featured-size;
+  height: @link-square-featured-size;
+  position: relative;
+  overflow: hidden;
+
+  .before, .after {
+    width: 100%;
+    height: @link-square-featured-size;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: @link-square-featured-size;
+    vertical-align: baseline;
+    -webkit-transition: top 0.5s;
+    -moz-transition: top 0.5s;
+    -ms-transition: top 0.5s;
+    -o-transition: top 0.5s;
+    transition: top 0.5s;
+  }
+  .before {
+    font-size: 20px;
+    color: @link-square-featured-color;
+    z-index: 1;
+  }
+  .after {
+    padding-top: @link-square-featured-after-distance;
+    background: linear-gradient(@link-square-featured-bg-color @link-square-featured-size,
+        @link-square-featured-hover-bg-color @link-square-featured-after-distance);
+    color: @link-square-featured-hover-color;
+  }
+  &:hover .before {
+    top: -@link-square-featured-before-distance;
+  }
+  &:hover .after {
+    top: -@link-square-featured-after-distance;
+  }
+  .fa {
+    margin-top: 25%;
+  }
+}
+.link-square-featured.green {
+  .after {
+    background: linear-gradient(@link-square-featured-bg-color-green @link-square-featured-size,
+    @link-square-featured-hover-bg-color @link-square-featured-after-distance);
+    color: @link-square-featured-hover-color-green;
+  }
+}
+
 
 
 /**
@@ -143,8 +210,67 @@
 }
 
 
+/**
+  * 导航栏
+  */
+
+.navbar {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar > li {
+  float: left;
+  padding: 0 10px;
+}
+
+.navbar > li > a {
+  line-height: 40px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+}
 
 
+/**
+  * 搜索条
+  */
+@searchbar-height: 36px;
+@searchbar-width: 260px;
+@searchbar-input-width: 200px;
+@searchbar-btn-bg-color: #00aeef;
+@searchbar-btn-hover-bg-color: #0084c2;
+@searchbar-btn-color: #fff;
+.searchbar {
+  width: @searchbar-width;
+  height: @searchbar-height;
+  font-size: 0;
+
+}
+.searchbar_input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200px;
+  padding: 10px;
+  height: 100%;
+  border: 0;
+  font-size: 16px;
+}
+.searchbar_btn {
+  width: @searchbar-width - @searchbar-input-width;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  color: @searchbar-btn-color;
+  background-color: @searchbar-btn-bg-color;
+  font-size: 16px;
+  &:hover {
+    background-color: @searchbar-btn-hover-bg-color;
+  }
+}
 
 
 /**
@@ -158,7 +284,6 @@
 .bg-orange { background-color: #eb5d24; }
 .bg-purple { background-color: #5f588a; }
 .bg-green { background-color: #2ea254; }
-.bg-blue { background-color: #0072e4; }
 .bg-amaranth { background-color: #b5044e; }
 .bg-light-grey { background-color: #dee2e4 }
 .bg-grey { background-color: #abaaaa; }

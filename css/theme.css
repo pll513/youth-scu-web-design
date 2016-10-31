@@ -2,10 +2,10 @@
  * 方块链接
  */
 .link-square {
-  position: relative;
   display: block;
   width: 100px;
   height: 100px;
+  position: relative;
   text-align: center;
   color: #fff;
   background-color: #0072e4;
@@ -32,6 +32,54 @@
   bottom: 16px;
   text-align: center;
   opacity: 0.75;
+}
+/**
+ * 特色方块链接
+ */
+.link-square-featured {
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+.link-square-featured .before,
+.link-square-featured .after {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  line-height: 100px;
+  vertical-align: baseline;
+  -webkit-transition: top 0.5s;
+  -moz-transition: top 0.5s;
+  -ms-transition: top 0.5s;
+  -o-transition: top 0.5s;
+  transition: top 0.5s;
+}
+.link-square-featured .before {
+  font-size: 20px;
+  color: #fff;
+  z-index: 1;
+}
+.link-square-featured .after {
+  padding-top: 300px;
+  background: linear-gradient(#00aeef 100px, #fff 300px);
+  color: #00aeef;
+}
+.link-square-featured:hover .before {
+  top: -100px;
+}
+.link-square-featured:hover .after {
+  top: -300px;
+}
+.link-square-featured .fa {
+  margin-top: 25%;
+}
+.link-square-featured.green .after {
+  background: linear-gradient(#2ea254 100px, #fff 300px);
+  color: #2ea254;
 }
 /**
  * 带图片链接
@@ -115,6 +163,55 @@
   background-color: #247f47;
 }
 /**
+  * 导航栏
+  */
+.navbar {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.navbar > li {
+  float: left;
+  padding: 0 10px;
+}
+.navbar > li > a {
+  line-height: 40px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+}
+/**
+  * 搜索条
+  */
+.searchbar {
+  width: 260px;
+  height: 36px;
+  font-size: 0;
+}
+.searchbar_input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200px;
+  padding: 10px;
+  height: 100%;
+  border: 0;
+  font-size: 16px;
+}
+.searchbar_btn {
+  width: 60px;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  color: #fff;
+  background-color: #00aeef;
+  font-size: 16px;
+}
+.searchbar_btn:hover {
+  background-color: #0084c2;
+}
+/**
  * 字体和背景色
  */
 .c-w {
@@ -137,9 +234,6 @@
 }
 .bg-green {
   background-color: #2ea254;
-}
-.bg-blue {
-  background-color: #0072e4;
 }
 .bg-amaranth {
   background-color: #b5044e;

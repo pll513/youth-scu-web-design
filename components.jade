@@ -1,6 +1,7 @@
 doctype html
 head
   title 组件
+  meta(charset="utf-8")
   link(rel="stylesheet" type="text/css" href="css/base.css")
   link(rel="stylesheet" type="text/css" href="css/theme.css")
   link(rel="stylesheet" type="text/css" href="css/components.css")
@@ -39,5 +40,33 @@ body
       i.fa.fa-search.fa-2x.link-square_icon
       h4.link-square_desc 学术科技
 
+  section.clearfix
+    ul.navbar
+      li
+        a 首页
+      li
+        a 团委介绍
+      li
+        a 团内档案
+      li
+        a 活动专题
+      li
+        a 组织介绍
+      li
+        a 社团风采
+  section.clearfix
+    form.searchbar
+      input.searchbar_input(type="text" placeholder="关键词")
+      input.searchbar_btn(type="submit" value="搜索")
+  section.clearfix
+    a.link-square-featured
+      .before 大创
+      .after
+        i.fa.fa-laptop.fa-3x
+    a.link-square-featured.green
+      .before 挑战杯
+      .after
+        i.fa.fa-bug.fa-3x
+  footer.footer
 
 
