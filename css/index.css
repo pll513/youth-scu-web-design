@@ -1,18 +1,160 @@
 /*
- ** 页头
+ ** 页头 header
  */
 .header {
   height: 140px;
   background-color: #001e3c;
 }
 .banner {
-  height: 400px;
   background-color: #777;
+}
+.banner .banner-img {
+  height: 450px;
+  background-image: url('../images/banner-1.jpg');
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+/*
+ ** 导航 nav
+ */
+/*
+ ** 新闻
+ */
+.news {
+  padding: 80px 0 50px;
+}
+.news .link-img {
+  margin: auto;
+}
+/*
+ ** 专题
+ */
+.special {
+  padding: 40px 0 40px;
+  background-color: #dde2e5;
+}
+.special .links {
+  margin-top: 40px;
+  width: 600px;
+}
+.special .link-square-featured {
+  margin: 10px;
+  float: left;
+}
+/*
+ ** 公告
+ */
+.notice {
+  margin: 40px 0 40px;
+}
+/*
+ ** 团委介绍
+ */
+.youth-league {
+  height: 300px;
+  position: relative;
+  color: #fff;
+  background-color: #60bcb1;
+}
+.youth-league h2 {
+  margin-bottom: 0;
+}
+.youth-league .arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.youth-league .left {
+  left: 40px;
+}
+.youth-league .right {
+  right: 40px;
+}
+.youth-league .group-name {
+  text-align: center;
+  margin-bottom: 14px;
+  opacity: 0.9;
+}
+.youth-league .group-into {
+  margin: auto;
+  text-align: center;
+  opacity: 0.9;
+}
+/*
+ ** 学生园地
+ */
+.student-ground {
+  margin: 80px 0 40px;
+}
+.student-ground .notice-wrap {
+  margin: auto;
+  width: 90%;
+}
+@media (max-width: 991px) {
+  .student-ground .notice-wrap {
+    width: 100%;
+  }
+}
+.student-ground .notice-list {
+  margin-bottom: 40px;
+}
+.student-ground .notice-list li {
+  height: 40px;
+}
+.student-ground .notice-list li a:hover .info {
+  color: #777;
+}
+.student-ground .notice-list .title,
+.student-ground .notice-list .info {
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+.student-ground .notice-list .title {
+  font-size: 18px;
+}
+.student-ground .notice-list .info {
+  font-size: 14px;
+  color: #999;
+}
+.student-ground .category-list {
+  text-align: center;
+}
+.student-ground .link-rect {
+  margin: auto;
+}
+.student-ground .btn {
+  margin: 28px 0 0;
 }
 /*
  ** 页脚
  */
 .footer {
-  height: 200px;
-  background-color: #001e3c;
+  background-color: #06324f;
+}
+.footer em {
+  font-style: italic;
+  font-size: 14px;
+  padding-left: 1em;
+}
+.footer li {
+  margin: 8px 0;
+  font-size: 14px;
+}
+.footer h3 {
+  opacity: 0.9;
+  font-size: 24px;
+  line-height: 60px;
+  margin: 0;
+}
+.footer .useful-links li {
+  opacity: 0.7;
+}
+.footer .useful-links li:hover {
+  opacity: 0.9;
+}
+.footer .contact-us p {
+  margin: 0;
+  font-size: 14px;
 }

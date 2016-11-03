@@ -1,29 +1,205 @@
 <!DOCTYPE html>
 <head>
   <title>首页</title>
+  <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/base.css">
   <link rel="stylesheet" type="text/css" href="css/theme.css">
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 </head>
 <body>
-  <header class="header"><img class="logo">
-    <form class="searchbar">
-      <input type="text" placeholder="关键词" class="searchbar_input">
-      <input type="submit" value="搜索" class="searchbar_btn">
-    </form>
-  </header>
+  <!--header.header-->
+  <!--  img.logo-->
+  <!--  form.searchbar-->
+  <!--    input.searchbar_input(type="text" placeholder="关键词")-->
+  <!--    input.searchbar_btn(type="submit" value="搜索")-->
   <nav class="nav clearfix">
     <ul class="navbar">
       <li><a>首页</a></li>
-      <li><a>团委介绍</a></li>
-      <li><a>团内档案</a></li>
-      <li><a>活动专题</a></li>
-      <li><a>组织介绍</a></li>
-      <li><a>社团风采</a></li>
+      <li><a>专题</a></li>
+      <li><a>新闻 NEWS</a></li>
+      <li><a>公告NOTICE</a></li>
+      <li><a>川大团委</a></li>
+      <li><a>学生园地</a></li>
+      <li><a>绿色通道</a></li>
     </ul>
   </nav>
-  <section class="banner"></section>
-  <section></section>
-  <footer class="footer"></footer>
+  <section class="banner">
+    <div class="banner-img"></div>
+  </section>
+  <section class="special clearfix">
+    <h2 class="f8 c-grey-2 tc">专题<span class="c-grey-4 fl ml1">SPECIAL</span></h2>
+    <p class="c-grey-4 tc">专题的简单描述精简高大上一点点</p>
+    <div class="container">
+      <div class="row">
+        <div class="links mauto clearfix"><a class="link-square-featured lighter">
+            <div class="before"><i class="fa fa-trophy fa-2x"></i>
+              <h4>挑战杯</h4>
+            </div>
+            <div class="after"><i class="fa fa-trophy fa-2x"></i>
+              <h4>挑战杯</h4>
+            </div></a><a class="link-square-featured light">
+            <div class="before"><i class="fa fa-laptop fa-2x"></i>
+              <h4>大创</h4>
+            </div>
+            <div class="after"><i class="fa fa-laptop fa-2x"></i>
+              <h4>大创</h4>
+            </div></a><a class="link-square-featured">
+            <div class="before"><i class="fa fa-globe fa-2x"></i>
+              <h4>社会实践</h4>
+            </div>
+            <div class="after"><i class="fa fa-globe fa-2x"></i>
+              <h4>社会实践</h4>
+            </div></a><a class="link-square-featured dark">
+            <div class="before"><i class="fa fa-heart fa-2x"></i>
+              <h4>公益志愿</h4>
+            </div>
+            <div class="after"><i class="fa fa-heart fa-2x"></i>
+              <h4>公益志愿</h4>
+            </div></a><a class="link-square-featured darker">
+            <div class="before"><i class="fa fa-search fa-2x"></i>
+              <h4>学术科技</h4>
+            </div>
+            <div class="after"><i class="fa fa-search fa-2x"></i>
+              <h4>学术科技</h4>
+            </div></a></div>
+      </div>
+    </div>
+  </section>
+  <section class="news clearfix bg-grey-1">
+    <h2 class="f8 c-grey-2 tc">新闻<span class="c-grey-4 fl ml1">NEWS</span></h2>
+    <div class="container">
+      <div class="row">
+        <div class="l-4"><a class="link-img">
+            <div class="link-img_img-wrap">
+              <div style="background-image:url('images/test-1.jpg');" class="link-img_img"></div>
+            </div>
+            <div class="link-img_text">
+              <h3 class="link-img_title">新闻标题</h3>
+              <p class="link-img_desc">新闻描述描述描述描述描述描述描述描述描述描述</p>
+            </div></a></div>
+        <div class="l-4"><a class="link-img">
+            <div class="link-img_img-wrap">
+              <div style="background-image:url('images/test-2.jpg');" class="link-img_img"></div>
+            </div>
+            <div class="link-img_text">
+              <h3 class="link-img_title">新闻2标题</h3>
+              <p class="link-img_desc">新闻描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</p>
+            </div></a></div>
+        <div class="l-4"><a class="link-img">
+            <div class="link-img_img-wrap">
+              <div style="background-image:url('images/test-2.jpg');" class="link-img_img"></div>
+            </div>
+            <div class="link-img_text">
+              <h3 class="link-img_title">新闻三标题</h3>
+              <p class="link-img_desc">新闻描述描述描述描述描述描述描述</p>
+            </div></a></div>
+      </div>
+    </div>
+  </section>
+  <section class="notice clearfix">
+    <h2 class="f8 c-grey-2 tc">公告<span class="c-grey-4 fl ml1">NOTICE</span></h2>
+    <div class="container">
+      <div class="row">
+        <div class="l-5 m-5 s-6 x-8 l-offset-1 m-offset-1 s-offset-0 x-offset-2">
+          <ul class="notice-list">
+            <li><a>关于在四川大学各级团组织和广大团员青年中学习宣传贯彻共产党的群团工作精神的通知</a></li>
+            <li><a>关于开展学习习近平总总书记在庆祝中国共产党成立95周年大会上的重要讲话专题团组织生</a></li>
+            <li><a>关于组织开展"挑战杯"四川大学2016年大学生课外学术科技作品竞赛和首批立项申报的通知</a></li>
+            <li><a>关于开展2016年暑期社会实践活动之"甘庆川交界地区优惠政策落实情况"调研活动通知</a></li>
+          </ul>
+        </div>
+        <div class="l-5 m-5 s-6 x-8 l-offset-0 m-offset-0 s-offset-0 x-offset-2">
+          <ul class="notice-list">
+            <li><a>关于补招四川大学团委宣传部川大人报社学生干部的通知</a></li>
+            <li><a>关于组织学生参加第十届成都青年创业大赛的通知</a></li>
+            <li><a>关于补招四川大学团委宣传部川大人报社学生干部的通知</a></li>
+            <li><a>关于组织学生参加第十届成都青年创业大赛的通知</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mt3 tc"><a class="btn mauto">更多公告</a></div>
+  </section>
+  <section class="youth-league pt5 clearfix">
+    <h2 class="f8 tc">川大团委<span class="op5 fl ml1">ABOUT US</span></h2>
+    <button class="arrow left"></button>
+    <button class="arrow right"></button>
+    <div class="container">
+      <div class="row">
+        <section class="l-8 m-10 s-12 x-12 l-offset-2 m-offset-1 s-offset-0 x-offset-0">
+          <h3 class="f5 tc group-name">四川大学青年传媒</h3>
+          <p class="tc group-into">四川大学青年传媒的介绍四川大学青年传媒的介绍四川大学青年传媒的介绍四川大学青年传媒的介绍</p>
+          <p class="tc group-into">四川大学青年传媒的介绍四川大学青年传媒的介绍四川大学青年传媒的介绍</p>
+          <p class="tc group-into">四川大学青年传媒的介绍四川大学青年传媒的介绍</p>
+        </section>
+      </div>
+    </div>
+  </section>
+  <section class="student-ground">
+    <h2 class="f8 c-grey-2 tc">学生园地<span class="c-grey-4 fl ml1">STUDENT</span></h2>
+    <div class="container">
+      <div class="row">
+        <div class="l-6 m-6 s-6 x-10 l-offset-1 m-offset-1 s-offset-0 x-offset-1">
+          <div class="notice-wrap clearfix">
+            <ul class="notice-list">
+              <li><a>
+                  <h3 class="title">华西药学院第22届分团委学生会表彰大会</h3>
+                  <p class="info">6月3日下午3点法学院报告厅</p></a></li>
+              <li><a>
+                  <h3 class="title">第十四届"半夏的纪念"北京(国际)大学生影像展四川大学站</h3>
+                  <p class="info">6月3日下午3点法学院报告厅</p></a></li>
+              <li><a>
+                  <h3 class="title">第十四届"半夏的纪念"北京(国际)大学生影像展四川大学站宣传活动</h3>
+                  <p class="info">6月3日下午3点法学院报告厅</p></a></li>
+              <li><a>
+                  <h3 class="title">文学与新闻学院艺术型社团王炎龙教授茶座</h3>
+                  <p class="info">2016年5月30日15时50分 第一教学楼A座</p></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="l-4 m-4 s-6 x-12">
+          <ul class="category-list">
+            <li class="pb2"><a class="link-rect warn">实习兼职帮</a></li>
+            <li class="pb2"><a class="link-rect">出国留学帮</a></li>
+            <li><a class="link-rect action">创新创业帮</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="tc">
+        <div href="#" class="a btn">更多</div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer clearfix c-w">
+    <div class="container">
+      <div class="row">
+        <section class="x-12 s-5 m-3 l-3 useful-links">
+          <h3>友情链接</h3>
+          <ul>
+            <li><a href="#">四川大学</a></li>
+            <li><a href="#">教务处</a></li>
+            <li><a href="#">学工部</a></li>
+            <li><a href="#">国际合作与交流处</a></li>
+            <li><a href="#">青年之声</a></li>
+            <li><a href="#">Myouth</a></li>
+          </ul>
+        </section>
+        <section class="x-12 s-7 m-6 l-6 contact-us">
+          <h3>联系我们</h3>
+          <ul>
+            <li><span class="op7">共青团四川大学委员会邮箱</span><em class="op9">scutw@163.com</em></li>
+            <li><span class="op7">新闻投稿邮箱</span><em class="op9">scutwnews@qq.com</em></li>
+            <li><span class="op7">办公室,对外联络,科技创新,就业创业事宜</span><em class="op9">85401222</em></li>
+            <li><span class="op7">组织部,学生会,青年志愿,社会实践事宜</span><em class="op9">85407980</em></li>
+            <li><span class="op7">宣传部,文化艺术,团委公选课事宜</span><em class="op9">85406812</em></li>
+            <li><span class="op7">学生社团事宜</span><em class="op9">85998669</em></li>
+          </ul>
+        </section>
+        <section class="x-12 s-12 m-3 l-3 qr-code">
+          <h3>二维码</h3>
+        </section>
+      </div>
+    </div>
+  </footer>
 </body>

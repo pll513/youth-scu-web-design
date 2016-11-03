@@ -1,5 +1,5 @@
 /*
- ** 页头
+ ** 页头 header
  */
 
 @header-height: 140px;
@@ -12,8 +12,157 @@
 }
 
 .banner {
-  height: 400px;
+  //height: 450px;
   background-color: #777;
+  .banner-img {
+    height: 450px;
+    background-image: url('../images/banner-1.jpg');
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+}
+
+
+/*
+ ** 导航 nav
+ */
+
+.nav {
+
+}
+
+/*
+ ** 新闻
+ */
+
+.news {
+  padding: 80px 0 50px;
+  .link-img {
+    margin: auto;
+  }
+}
+
+
+/*
+ ** 专题
+ */
+
+@link-square-featured-size: 100px;
+@link-square-featured-gap: 20px;
+
+.special {
+  padding: 40px 0 40px;
+  background-color: rgb(221,226,229);
+  .links {
+    margin-top: 40px;
+    width: 5 * @link-square-featured-gap + 5 * @link-square-featured-size;
+  }
+  .link-square-featured {
+    margin: @link-square-featured-gap / 2;
+    float: left;
+  }
+}
+
+
+/*
+ ** 公告
+ */
+.notice {
+  margin: 40px 0 40px;
+}
+
+
+
+/*
+ ** 团委介绍
+ */
+
+@subscribe-height: 200px;
+@subscribe-bg-color: rgb(96,188,177);
+@p-font-size: 14px;
+
+.youth-league {
+  height: 300px;
+  position: relative;
+  color: #fff;
+  background-color: @subscribe-bg-color;
+  h2 {
+    margin-bottom: 0;
+  }
+  .arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .left {
+    left: 40px;
+  }
+  .right {
+    right: 40px;
+  }
+  .group-name {
+    text-align: center;
+    margin-bottom: 1 * @p-font-size;
+    opacity: 0.9;
+  }
+  .group-into {
+    //width: 600px;
+    margin: auto;
+    text-align: center;
+    opacity: 0.9;
+  }
+}
+
+
+/*
+ ** 学生园地
+ */
+
+.student-ground {
+  margin: 80px 0 40px;
+  .notice-wrap {
+    margin: auto;
+    width: 90%;
+  }
+  @media (max-width: 991px) {
+    .notice-wrap {
+      width: 100%;
+    }
+  }
+  .notice-list {
+    margin-bottom: 40px;
+    li {
+      height: 40px;
+      a:hover {
+        .info {
+          color: #777;
+        }
+      }
+    }
+    //background-color: #cccccc;
+    .title, .info {
+      line-height: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    .title {
+      font-size: 18px;
+    }
+    .info {
+      font-size: 14px;
+      color: #999;
+    }
+  }
+  .category-list {
+    text-align: center;
+  }
+  .link-rect {
+    margin: auto;
+  }
+  .btn {
+    margin: 28px 0 0;
+  }
 }
 
 /*
@@ -21,9 +170,42 @@
  */
 
 @footer-height: 200px;
-@footer-bg-color: #001e3c;
+@footer-bg-color: rgb(6,50,79);
 
 .footer {
-  height: @footer-height;
+  //height: @footer-height;
+  em {
+    font-style: italic;
+    font-size: 14px;
+    padding-left: 1em;
+  }
+  li {
+    margin: 8px 0;
+    font-size: 14px;
+  }
+  h3 {
+    opacity: 0.9;
+    font-size: 24px;
+    line-height: 60px;
+    margin: 0;
+  }
   background-color: @footer-bg-color;
+  .useful-links {
+    li {
+      opacity: 0.7;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+  .contact-us {
+
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+  }
+  .qr-code {
+
+  }
 }
