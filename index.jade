@@ -1,32 +1,196 @@
 doctype html
 head
   title 首页
+  meta(charset="utf-8")
   link(rel="stylesheet" type="text/css" href="css/base.css")
   link(rel="stylesheet" type="text/css" href="css/theme.css")
   link(rel="stylesheet" type="text/css" href="css/index.css")
   link(rel="stylesheet" type="text/css" href="css/font-awesome.css")
 body
-  header.header
-    img.logo
-    form.searchbar
-      input.searchbar_input(type="text" placeholder="关键词")
-      input.searchbar_btn(type="submit" value="搜索")
+  //header.header
+  //  img.logo
+  //  form.searchbar
+  //    input.searchbar_input(type="text" placeholder="关键词")
+  //    input.searchbar_btn(type="submit" value="搜索")
   nav.nav.clearfix
     ul.navbar
       li
         a 首页
       li
-        a 团委介绍
+        a 专题
       li
-        a 团内档案
+        a 新闻 NEWS
       li
-        a 活动专题
+        a 公告NOTICE
       li
-        a 组织介绍
+        a 川大团委
       li
-        a 社团风采
+        a 学生园地
+      li
+        a 绿色通道
   section.banner
+    .banner-img
+  section.special.clearfix
+    h2.f8.c-grey-2.tc 专题
+      span.c-grey-4.fl.ml1 SPECIAL
+    p.c-grey-4.tc 专题的简单描述精简高大上一点点
+    .container
+      .row
+        .links.mauto.clearfix
+          a.link-square-featured.lighter
+            .before
+              i.fa.fa-trophy.fa-2x
+              h4 挑战杯
+            .after
+              i.fa.fa-trophy.fa-2x
+              h4 挑战杯
+          a.link-square-featured.light
+            .before
+              i.fa.fa-laptop.fa-2x
+              h4 大创
+            .after
+              i.fa.fa-laptop.fa-2x
+              h4 大创
+          a.link-square-featured
+            .before
+              i.fa.fa-globe.fa-2x
+              h4 社会实践
+            .after
+              i.fa.fa-globe.fa-2x
+              h4 社会实践
+          a.link-square-featured.dark
+            .before
+              i.fa.fa-heart.fa-2x
+              h4 公益志愿
+            .after
+              i.fa.fa-heart.fa-2x
+              h4 公益志愿
+          a.link-square-featured.darker
+            .before
+              i.fa.fa-search.fa-2x
+              h4 学术科技
+            .after
+              i.fa.fa-search.fa-2x
+              h4 学术科技
+  section.news.clearfix.bg-grey-1
+    h2.f8.c-grey-2.tc 新闻
+      span.c-grey-4.fl.ml1 NEWS
+    .container
+      .row
+        .l-4
+          a.link-img
+            .link-img_img-wrap
+              .link-img_img(style="background-image:url('images/test-1.jpg');")
+            .link-img_text
+              h3.link-img_title 新闻标题
+              p.link-img_desc 新闻描述描述描述描述描述描述描述描述描述描述
+        .l-4
+          a.link-img
+            .link-img_img-wrap
+              .link-img_img(style="background-image:url('images/test-2.jpg');")
+            .link-img_text
+              h3.link-img_title 新闻2标题
+              p.link-img_desc 新闻描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述
+        .l-4
+          a.link-img
+            .link-img_img-wrap
+              .link-img_img(style="background-image:url('images/test-2.jpg');")
+            .link-img_text
+              h3.link-img_title 新闻三标题
+              p.link-img_desc 新闻描述描述描述描述描述描述描述
+  section.youth-league.clearfix
+    h2.f8.tc 川大团委
+      span.op5.fl ABOUT US
+    .container
+      .row
+        section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
+          h3.f5.tc.group-name 四川大学青年传媒
+          p.tc.group-into 四川大学青年传媒的介绍四川大学青年传媒的介绍四川大学青年传媒的介绍四川大学青年传媒的介绍四川大学青年传媒的介绍四川大学青年传媒的介绍四川大学青年传媒的介绍四川大学青年传媒的介绍
+  section.notice.clearfix.container
+    h2.f8.c-grey-2.tc 公告
+      span.c-grey-4.fl.ml1 NOTICE
+    .row
+      .l-5.m-5.s-6.x-8.l-offset-1.m-offset-1.s-offset-0.x-offset-2
+        ul.notice-list
+          li
+            a 公告一公告一公告一公告一公告一公告一公告一公告一公告一公告一公告一公告一公告一
+          li
+            a 公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二
+          li
+            a 公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三
+          li
+            a 公告四公告四公告四公告四公告四公告四公告四公告四公告四公告四公告四
+      .l-5.m-5.s-6.x-8.l-offset-0.m-offset-0.s-offset-0.x-offset-2
+        ul.notice-list
+          li
+            a 公告一公告一公告一公告一公告一公告一公告一公告一公告一公告一公告一公告一公告一
+          li
+            a 公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二
+          li
+            a 公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三
+          li
+            a 公告四公告四公告四公告四公告四公告四公告四公告四公告四公告四公告四
+  section.student-ground.container
+    h2.c-grey-2 学生园地
+    .row
+      .l-6.m-6.s-6.x-6
+        ul.message-list
+          li
+            a 公告一公告一公告一公告一公告一公告一公告一公告一公告一公告一公告一公告一公告一
+          li
+            a 公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二公告二
+          li
+            a 公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三公告三
+          li
+            a 公告四公告四公告四公告四公告四公告四公告四公告四公告四公告四公告四
+      .l-6.m-6.s-6.x-6
+        ul.category-list
+          li
+            a 实习兼职帮
+          li
+            a 出国留学帮
+          li
+            a 创新创业帮
 
+  footer.footer.clearfix.c-w
+    .container
+      .row
+        section.x-12.s-5.m-3.l-3.useful-links
+          h3 友情链接
+          ul
+            li
+              a(href="#") 四川大学
+            li
+              a(href="#") 教务处
+            li
+              a(href="#") 学工部
+            li
+              a(href="#") 国际合作与交流处
+            li
+              a(href="#") 青年之声
+            li
+              a(href="#") Myouth
+        section.x-12.s-7.m-6.l-6.contact-us
+          h3 联系我们
+          ul
+            li
+              span.op7 共青团四川大学委员会邮箱
+              em.op9 scutw@163.com
+            li
+              span.op7 新闻投稿邮箱
+              em.op9 scutwnews@qq.com
+            li
+              span.op7 办公室,对外联络,科技创新,就业创业事宜
+              em.op9 85401222
+            li
+              span.op7 组织部,学生会,青年志愿,社会实践事宜
+              em.op9 85407980
+            li
+              span.op7 宣传部,文化艺术,团委公选课事宜
+              em.op9 85406812
+            li
+              span.op7 学生社团事宜
+              em.op9 85998669
+        section.x-12.s-12.m-3.l-3.qr-code
+          h3 二维码
 
-  section
-  footer.footer
