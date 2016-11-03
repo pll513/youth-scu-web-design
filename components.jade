@@ -24,19 +24,19 @@ body
     a.link-rect(href ="#") 出国留学帮
 
   section.link-squares.mt2.clearfix
-    a.link-square.bg-red
+    a.link-square.lighter
       i.fa.fa-trophy.fa-2x.link-square_icon
       h4.link-square_desc 挑战杯
-    a.link-square.bg-orange
+    a.link-square.light
       i.fa.fa-laptop.fa-2x.link-square_icon
       h4.link-square_desc 大创
-    a.link-square.bg-purple
-      i.fa.fa-cubes.fa-2x.link-square_icon
+    a.link-square
+      i.fa.fa-globe.fa-2x.link-square_icon
       h4.link-square_desc 社会实践
-    a.link-square.bg-green
+    a.link-square.dark
       i.fa.fa-heart.fa-2x.link-square_icon
       h4.link-square_desc 公益志愿
-    a.link-square
+    a.link-square.darker
       i.fa.fa-search.fa-2x.link-square_icon
       h4.link-square_desc 学术科技
 
@@ -59,14 +59,41 @@ body
       input.searchbar_input(type="text" placeholder="关键词")
       input.searchbar_btn(type="submit" value="搜索")
   section.clearfix
+    a.link-square-featured.lighter
+      .before
+        i.fa.fa-trophy.fa-2x
+        h4 挑战杯
+      .after
+        i.fa.fa-trophy.fa-2x
+        h4 挑战杯
+    a.link-square-featured.light
+      .before
+        i.fa.fa-laptop.fa-2x
+        h4 大创
+      .after
+        i.fa.fa-laptop.fa-2x
+        h4 大创
     a.link-square-featured
-      .before 大创
+      .before
+        i.fa.fa-globe.fa-2x
+        h4 社会实践
       .after
-        i.fa.fa-laptop.fa-3x
-    a.link-square-featured.green
-      .before 挑战杯
+        i.fa.fa-globe.fa-2x
+        h4 社会实践
+    a.link-square-featured.dark
+      .before
+        i.fa.fa-heart.fa-2x
+        h4 公益志愿
       .after
-        i.fa.fa-bug.fa-3x
+        i.fa.fa-heart.fa-2x
+        h4 公益志愿
+    a.link-square-featured.darker
+      .before
+        i.fa.fa-search.fa-2x
+        h4 学术科技
+      .after
+        i.fa.fa-search.fa-2x
+        h4 学术科技
   section.clearfix.sec-arrow
     button.arrow
     button.arrow.right

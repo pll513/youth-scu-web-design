@@ -5,33 +5,42 @@
   display: block;
   width: 100px;
   height: 100px;
-  position: relative;
   text-align: center;
   color: #fff;
-  background-color: #0072e4;
+  background-color: #45a59a;
+  -webkit-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
+  -moz-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
+  -ms-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
+  -o-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
+  transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
 }
-.link-square:hover .link-square_icon {
-  font-size: 2.5em;
-  opacity: 1;
-}
-.link-square:hover .link-square_desc {
-  font-size: 1.15em;
-  opacity: 1;
+.link-square:hover {
+  -webkit-transform: translate(0, -20px);
+  -moz-transform: translate(0, -20px);
+  -ms-transform: translate(0, -20px);
+  -o-transform: translate(0, -20px);
+  transform: translate(0, -20px);
+  background-color: #1e4843 !important;
 }
 .link-square_icon {
-  position: absolute;
-  left: 0;
-  bottom: 42px;
+  margin-top: 20px;
   width: 100%;
-  opacity: 0.8;
+  bottom: 10px;
 }
 .link-square_desc {
-  position: absolute;
-  width: 100%;
-  margin: 0;
-  bottom: 16px;
-  text-align: center;
-  opacity: 0.75;
+  margin-top: 20px;
+}
+.link-square.lighter {
+  background-color: #76c6bd;
+}
+.link-square.light {
+  background-color: #5abaaf;
+}
+.link-square.dark {
+  background-color: #39897f;
+}
+.link-square.darker {
+  background-color: #2d6c65;
 }
 /**
  * 长方形链接
