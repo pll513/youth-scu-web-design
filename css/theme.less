@@ -217,16 +217,17 @@ body {
 /**
  * 带图片链接
  */
+
 @link-img-desc-font-size: 15px;
-@link-img-width: @link-img-desc-font-size * 20 + 20;
-@link-img-height: @link-img-width;
-@link-img-img-height: @link-img-width * 9 / 16;
+@link-img-img-height: 140px;
+@link-img-height: 300px;
 
 .link-img {
   position: relative;
   display: block;
-  width: @link-img-width;
+  width: 90%;
   height: @link-img-height;
+  margin: auto;
   background-color: #fff;
   overflow: hidden;
   //&:hover {
@@ -239,7 +240,7 @@ body {
   //}
 }
 .link-img_img-wrap {
-  width: @link-img-width;
+  width: 100%;
   height: @link-img-img-height;
   background-color: #ccc;
 }
@@ -253,7 +254,6 @@ body {
   height: @link-img-height - @link-img-img-height;
   padding: 10px;
   color: #fff;
-  //text-align: center;
 }
 .link-img_title {
   padding: 10px 0 5px;

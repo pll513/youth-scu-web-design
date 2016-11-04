@@ -26,6 +26,39 @@
 .news .link-img {
   margin: auto;
 }
+.news .news-list-wrap {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+}
+.news .news-list {
+  position: absolute;
+  width: 200%;
+  top: 0;
+  left: 0;
+}
+.news .news-wrap {
+  float: left;
+  width: 12.5%;
+}
+.news .news-pagination {
+  bottom: 40px;
+  font-size: 0;
+}
+.news .page {
+  margin: 0 7px;
+  display: inline-block;
+  width: 45px;
+  height: 7px;
+  background-color: #76c6bd;
+}
+.news .page:hover,
+.news .page.active {
+  background-color: #2d6c65;
+}
+.news .page:hover {
+  cursor: pointer;
+}
 /*
  ** 专题
  */
@@ -57,7 +90,7 @@
   z-index: -1;
   width: 100%;
   height: 100%;
-  background-image: url('../images/index-bg-1.jpg');
+  background-image: url('../images/index-bg-3.jpg');
   -webkit-background-size: cover;
   background-size: cover;
 }
