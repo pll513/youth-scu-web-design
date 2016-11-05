@@ -1,3 +1,22 @@
+.title {
+  margin: 60px auto 0;
+  text-align: center;
+}
+.title-desc {
+  position: relative;
+  text-align: center;
+  color: #555;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+}
+.divider {
+  display: block;
+  margin: 25px auto 40px;
+  width: 70px;
+  height: 5px;
+  background-color: #2d6c65;
+}
 /*
  ** 页头 header
  */
@@ -22,6 +41,7 @@
  */
 .news {
   padding: 80px 0 50px;
+  background-color: #f2f2f2;
 }
 .news .link-img {
   margin: auto;
@@ -34,6 +54,7 @@
 .news .news-list {
   position: absolute;
   width: 200%;
+  padding: 20px 0 20px;
   top: 0;
   left: 0;
 }
@@ -68,11 +89,9 @@
 }
 .special .links {
   margin-top: 40px;
-  width: 600px;
 }
 .special .link-square {
   margin: 10px;
-  float: left;
 }
 /*
  ** 公告
@@ -95,7 +114,7 @@
   background-size: cover;
 }
 .youth-league {
-  height: 300px;
+  height: 360px;
   position: relative;
   color: #fff;
   padding: 0;
@@ -103,7 +122,15 @@
 }
 .youth-league .title {
   position: absolute;
+  margin: 0;
+  top: 40px;
   width: 100%;
+}
+.youth-league .title-desc {
+  width: 100%;
+  position: absolute;
+  top: 90px;
+  color: white;
 }
 .youth-league .arrow {
   position: absolute;
@@ -139,7 +166,7 @@
 }
 .youth-league .group-name {
   text-align: center;
-  margin-top: 160px;
+  margin-top: 156px;
   opacity: 0.9;
 }
 .youth-league .group-intro {

@@ -12,9 +12,9 @@ body {
  * 方块链接
  */
 .link-square {
-  display: block;
-  width: 100px;
-  height: 100px;
+  display: inline-block;
+  width: 130px;
+  height: 130px;
   text-align: center;
   color: #fff;
   background-color: #45a59a;
@@ -25,11 +25,11 @@ body {
   transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
 }
 .link-square:hover {
-  -webkit-transform: translate(0, -20px);
-  -moz-transform: translate(0, -20px);
-  -ms-transform: translate(0, -20px);
-  -o-transform: translate(0, -20px);
-  transform: translate(0, -20px);
+  -webkit-transform: translate(0, -12px);
+  -moz-transform: translate(0, -12px);
+  -ms-transform: translate(0, -12px);
+  -o-transform: translate(0, -12px);
+  transform: translate(0, -12px);
   background-color: #1e4843 !important;
 }
 .link-square_icon {
@@ -169,10 +169,64 @@ body {
   margin: auto;
   background-color: #fff;
   overflow: hidden;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.link-img:hover {
+  -webkit-transform: translate(0, -20px);
+  -moz-transform: translate(0, -20px);
+  -ms-transform: translate(0, -20px);
+  -o-transform: translate(0, -20px);
+  transform: translate(0, -20px);
+}
+.link-img:before {
+  content: '';
+  width: 100%;
+  height: 160px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  color: transparent;
+  opacity: 0;
+  content: 'MORE';
+  font-family: Raleway;
+  font-size: 30px;
+  text-align: center;
+  line-height: 160px;
+  background-color: #60bcb1;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+.link-img:hover:before {
+  color: #fff;
+  opacity: 0.85;
+}
+.link-img:after {
+  content: '';
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #60bcb1;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.link-img:hover:after {
+  display: block;
 }
 .link-img_img-wrap {
   width: 100%;
-  height: 140px;
+  height: 160px;
   background-color: #ccc;
 }
 .link-img_img {
@@ -182,23 +236,32 @@ body {
   background-size: cover;
 }
 .link-img_text {
-  height: 160px;
+  height: 140px;
   padding: 10px;
   color: #fff;
 }
 .link-img_title {
-  padding: 10px 0 5px;
-  line-height: 1.5;
+  padding: 0 0 5px;
+  line-height: 25px;
+  height: 50px;
   margin: 0;
   color: #333;
   font-size: 17px;
+  overflow: hidden;
+  text-align: justify;
+  -ms-text-justify: distribute;
+  text-justify: distribute;
 }
 .link-img_desc {
   margin: 0;
-  line-height: 1.2;
-  overflow: hidden;
+  line-height: 20px;
+  height: 60px;
   color: #777;
   font-size: 15px;
+  overflow: hidden;
+  text-align: justify;
+  -ms-text-justify: distribute;
+  text-justify: distribute;
 }
 /**
  * 按钮
@@ -425,4 +488,12 @@ body {
 }
 .bg-dark-grey {
   background-color: #6c6c6c;
+}
+::-moz-selection {
+  color: #fff;
+  background-color: #60bcb1;
+}
+::selection {
+  color: #fff;
+  background-color: #60bcb1;
 }
