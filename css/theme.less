@@ -399,7 +399,6 @@ body {
   */
 
 .navbar {
-  float: left;
   margin: 0;
   padding: 0;
 }
@@ -412,11 +411,13 @@ body {
 .navbar > li > a {
   line-height: 40px;
   display: block;
-  width: 100px;
+  //width: 100px;
+  padding: 0 10px;
   text-align: center;
   text-decoration: none;
+  font-size: 20px;
   &:hover {
-    background-color: #ccc;
+    color: @theme-color-1;
   }
 }
 

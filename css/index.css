@@ -21,17 +21,63 @@
  ** 页头 header
  */
 .header {
-  height: 140px;
-  background-color: #001e3c;
+  min-width: 500px;
+  z-index: 1;
+  position: relative;
+  height: 700px;
 }
-.banner {
-  background-color: #777;
+.header .bg-img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: -2;
 }
-.banner .banner-img {
-  height: 450px;
-  background-image: url('../images/banner-1.jpg');
-  -webkit-background-size: cover;
-  background-size: cover;
+.header .bg-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 72, 67, 0.5);
+  z-index: -1;
+}
+.header .header-text {
+  width: 100%;
+  position: absolute;
+  top: 220px;
+  text-align: center;
+}
+.header .welcome {
+  font-family: Raleway;
+  color: #fff;
+  font-size: 40px;
+  margin: 0;
+  opacity: 0.8;
+}
+.header .title {
+  margin: 0;
+  line-height: 116px;
+  color: #fff;
+  text-align: center;
+  font-size: 116px;
+  font-weight: 900;
+}
+.header .desc {
+  font-size: 24px;
+  font-weight: 300;
+  color: #fff;
+  text-align: center;
+  opacity: 0.8;
+}
+.header .desc p {
+  margin: 0;
+}
+.header .nav {
+  opacity: 0.8;
+  width: 100%;
+  position: absolute;
+  bottom: 80px;
+}
+.header .navbar {
+  display: inline-block;
 }
 /*
  ** 导航 nav
@@ -97,13 +143,13 @@
  ** 公告
  */
 .notice {
-  padding: 40px 0 40px;
+  padding: 80px 0 50px;
   background-color: #fff;
 }
 /*
  ** 团委介绍
  */
-.youth-league-bg {
+.header-bg {
   position: fixed;
   top: 0;
   z-index: -1;
@@ -178,7 +224,7 @@
  ** 学生园地
  */
 .student-ground {
-  padding: 80px 0 40px;
+  padding: 80px 0 50px;
   background-color: #fff;
 }
 .student-ground .notice-wrap {

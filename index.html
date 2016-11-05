@@ -8,26 +8,34 @@
   <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 </head>
 <body>
-  <!--header.header-->
-  <!--  img.logo-->
-  <!--  form.searchbar-->
-  <!--    input.searchbar_input(type="text" placeholder="关键词")-->
-  <!--    input.searchbar_btn(type="submit" value="搜索")-->
-  <nav class="nav clearfix">
-    <ul class="navbar">
-      <li><a>首页</a></li>
-      <li><a>专题</a></li>
-      <li><a>新闻</a></li>
-      <li><a>公告</a></li>
-      <li><a>川大团委</a></li>
-      <li><a>学生园地</a></li>
-      <li><a>绿色通道</a></li>
-    </ul>
-  </nav>
-  <section class="banner">
-    <div class="banner-img"></div>
-  </section>
-  <section class="special clearfix">
+  <div class="header-bg"></div>
+  <header class="header">
+    <!--img.bg-img(src='images/index-bg-4.jpg')-->
+    <div class="bg-layer"></div>
+    <div class="header-text">
+      <p class="welcome">WELCOME TO</p>
+      <h1 class="title">青春川大</h1>
+      <div class="desc">
+        <p><span>感受青春律动</span><span class="ml2">释放青春活力</span></p>
+        <p>—— 触手可及的川大共青团</p>
+      </div>
+    </div>
+    <!--img.logo-->
+    <!--form.searchbar-->
+    <!--  input.searchbar_input(type="text" placeholder="关键词")-->
+    <!--  input.searchbar_btn(type="submit" value="搜索")-->
+    <nav class="nav clearfix c-w tc">
+      <ul class="navbar mauto">
+        <li><a href="#special">专题</a></li>
+        <li><a href="#news">新闻</a></li>
+        <li><a href="#notice">公告</a></li>
+        <li><a href="#youth-league">川大团委</a></li>
+        <li><a href="#student-ground">学生园地</a></li>
+        <li><a href="#green-channel">绿色通道</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="special" class="special clearfix">
     <h2 class="title f8 c-grey-2 tc">专题<span class="c-grey-4 fl ml1 f-rw">SPECIAL</span></h2>
     <p class="title-desc">点面结合 板块互联 扬帆新航</p>
     <div class="divider"></div>
@@ -42,7 +50,7 @@
       </div>
     </div>
   </section>
-  <section class="news clearfix bg-grey-1">
+  <section id="news" class="news clearfix bg-grey-1">
     <h2 class="title f8 c-grey-2 tc">新闻<span class="c-grey-4 fl ml1 f-rw">NEWS</span></h2>
     <p class="title-desc">最热资讯汇聚最燃青春正能量</p>
     <div class="divider"></div>
@@ -117,7 +125,7 @@
       </div>
     </div>
   </section>
-  <section class="notice clearfix">
+  <section id="notice" class="notice clearfix">
     <h2 class="title f8 c-grey-2 tc">公告<span class="c-grey-4 fl ml1 f-rw">NOTICE</span></h2>
     <p class="title-desc">引领青年发展 助力青年成长</p>
     <div class="divider"></div>
@@ -143,8 +151,7 @@
     </div>
     <div class="mt3 tc"><a class="btn mauto">更多公告</a></div>
   </section>
-  <div class="youth-league-bg"></div>
-  <section class="youth-league pt5 clearfix">
+  <section id="youth-league" class="youth-league pt5 clearfix">
     <h2 class="title f8 tc">川大团委<span class="op5 fl ml1 f-rw">ABOUT US</span></h2>
     <p class="title-desc">触手可及的川大共青团</p>
     <button id="yl-left" class="arrow left"></button>
@@ -266,7 +273,7 @@
       </div>
     </div>
   </section>
-  <section class="student-ground">
+  <section id="student-ground" class="student-ground">
     <h2 class="title f8 c-grey-2 tc">学生园地<span class="c-grey-4 fl ml1 f-rw">STUDENT</span></h2>
     <p class="title-desc">感知最在地青春川大</p>
     <div class="divider"></div>
@@ -303,7 +310,7 @@
       </div>
     </div>
   </section>
-  <footer class="footer clearfix c-w">
+  <footer id="green-channel" class="footer clearfix c-w">
     <div class="container">
       <div class="row">
         <section class="x-12 s-5 m-3 l-3 useful-links">

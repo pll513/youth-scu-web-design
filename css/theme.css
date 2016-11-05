@@ -304,7 +304,6 @@ body {
   * 导航栏
   */
 .navbar {
-  float: left;
   margin: 0;
   padding: 0;
 }
@@ -315,12 +314,13 @@ body {
 .navbar > li > a {
   line-height: 40px;
   display: block;
-  width: 100px;
+  padding: 0 10px;
   text-align: center;
   text-decoration: none;
+  font-size: 20px;
 }
 .navbar > li > a:hover {
-  background-color: #ccc;
+  color: #60bcb1;
 }
 /**
   * 搜索条

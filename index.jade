@@ -7,30 +7,37 @@ head
   link(rel="stylesheet" type="text/css" href="css/index.css")
   link(rel="stylesheet" type="text/css" href="css/font-awesome.css")
 body
-  //header.header
-  //  img.logo
-  //  form.searchbar
-  //    input.searchbar_input(type="text" placeholder="关键词")
-  //    input.searchbar_btn(type="submit" value="搜索")
-  nav.nav.clearfix
-    ul.navbar
-      li
-        a 首页
-      li
-        a 专题
-      li
-        a 新闻
-      li
-        a 公告
-      li
-        a 川大团委
-      li
-        a 学生园地
-      li
-        a 绿色通道
-  section.banner
-    .banner-img
-  section.special.clearfix
+  .header-bg
+  header.header
+    //img.bg-img(src='images/index-bg-4.jpg')
+    .bg-layer
+    .header-text
+      p.welcome WELCOME TO
+      h1.title 青春川大
+      .desc
+        p
+          span 感受青春律动
+          span.ml2 释放青春活力
+        p —— 触手可及的川大共青团
+    //img.logo
+    //form.searchbar
+    //  input.searchbar_input(type="text" placeholder="关键词")
+    //  input.searchbar_btn(type="submit" value="搜索")
+    nav.nav.clearfix.c-w.tc
+      ul.navbar.mauto
+        li
+          a(href='#special') 专题
+        li
+          a(href='#news') 新闻
+        li
+          a(href='#notice') 公告
+        li
+          a(href='#youth-league') 川大团委
+        li
+          a(href='#student-ground') 学生园地
+        li
+          a(href='#green-channel') 绿色通道
+  section.special.clearfix#special
     h2.title.f8.c-grey-2.tc 专题
       span.c-grey-4.fl.ml1.f-rw SPECIAL
     p.title-desc 点面结合 板块互联 扬帆新航
@@ -53,7 +60,7 @@ body
           a.link-square.darker
             i.fa.fa-search.fa-2x.link-square_icon
             h4.link-square_desc 学术科技
-  section.news.clearfix.bg-grey-1
+  section.news.clearfix.bg-grey-1#news
     h2.title.f8.c-grey-2.tc 新闻
       span.c-grey-4.fl.ml1.f-rw NEWS
     p.title-desc 最热资讯汇聚最燃青春正能量
@@ -117,7 +124,7 @@ body
               .link-img_text
                 h3.link-img_title 四川大学120周年校庆志愿者总结表彰大会成功举行
                 p.link-img_desc 11月3日，四川大学120周年校庆志愿者总结表彰大会在文华活动中心音乐厅成功举行。校党委副书记李向成、校长助理、学工部部长郭勇参加大会。大会由校团委书记徐海鑫主持。
-  section.notice.clearfix
+  section.notice.clearfix#notice
     h2.title.f8.c-grey-2.tc 公告
       span.c-grey-4.fl.ml1.f-rw NOTICE
     p.title-desc 引领青年发展 助力青年成长
@@ -146,8 +153,7 @@ body
               a 关于组织开展“挑战杯”四川大学2016年学生科技节之第三届“墨香古韵”国学知识竞赛的通知
     .mt3.tc
       a.btn.mauto 更多公告
-  .youth-league-bg
-  section.youth-league.pt5.clearfix
+  section.youth-league.pt5.clearfix#youth-league
     h2.title.f8.tc 川大团委
       span.op5.fl.ml1.f-rw ABOUT US
     p.title-desc 触手可及的川大共青团
@@ -228,7 +234,7 @@ body
             section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
               h3.f5.tc.group-name 川大青年研究中心
               p.tc.group-intro 川大共青团青年研究中心是全校性的青年研究中心，引导学生思潮，探究学生思想。
-  section.student-ground
+  section.student-ground#student-ground
     h2.title.f8.c-grey-2.tc 学生园地
       span.c-grey-4.fl.ml1.f-rw STUDENT
     p.title-desc 感知最在地青春川大
@@ -265,7 +271,7 @@ body
       .tc
         .a.btn(href="#") 更多
 
-  footer.footer.clearfix.c-w
+  footer.footer.clearfix.c-w#green-channel
     .container
       .row
         section.x-12.s-5.m-3.l-3.useful-links
