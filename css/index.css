@@ -58,8 +58,10 @@
 }
 .header .searchbar {
   position: absolute;
-  top: 0;
+  top: 470px;
+  left: 0;
   right: 0;
+  margin: auto;
 }
 .header .bg-img {
   position: absolute;
@@ -122,14 +124,7 @@
     font-size: 16px;
     padding: 0 8px;
   }
-  .header .searchbar {
-    left: 0;
-    margin: auto;
-  }
 }
-/*
- ** 导航 nav
- */
 /*
  ** 新闻
  */
@@ -250,13 +245,13 @@
   width: 10%;
 }
 .youth-league .red {
-  background-color: rgba(235, 129, 119, 0.5);
+  background-color: rgba(97, 45, 41, 0.9);
 }
 .youth-league .blue {
-  background-color: rgba(117, 184, 229, 0.5);
+  background-color: rgba(26, 93, 137, 0.9);
 }
 .youth-league .green {
-  background-color: rgba(96, 188, 177, 0.5);
+  background-color: rgba(51, 122, 114, 0.9);
 }
 .youth-league .group-name {
   text-align: center;
@@ -341,16 +336,25 @@
   line-height: 60px;
   margin: 0;
 }
+.footer .useful-links {
+  font-weight: 500;
+}
 .footer .useful-links li {
   opacity: 0.7;
 }
 .footer .useful-links li:hover {
   opacity: 0.9;
 }
-.footer .contact-us p {
-  margin: 0;
-  font-size: 14px;
+.footer .contact-us {
+  font-weight: 500;
 }
 .footer .qr-code .img-qrcode {
-  height: 150px;
+  width: 150px;
+}
+.footer .qr-code .qrcode-desc {
+  width: 150px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
 }

@@ -68,8 +68,10 @@
   height: @header-height;
   .searchbar {
     position: absolute;
-    top: 0;
+    top: 470px;
+    left: 0;
     right: 0;
+    margin: auto;
   }
   .bg-img {
     position: absolute;
@@ -106,7 +108,6 @@
     font-weight: 900;
   }
   .desc {
-    //width: 100%;
     font-size: 24px;
     font-weight: 300;
     color: #fff;
@@ -142,33 +143,8 @@
         padding: 0 8px;
       }
     }
-    .searchbar {
-      left: 0;
-      margin: auto;
-    }
   }
-  //background-image: url('../images/index-bg-4.jpg');
-  //-webkit-background-size: cover;
-  //background-size: cover;
-  //background-position: center;
 }
-
-//.banner {
-//  //height: 450px;
-//  background-color: #777;
-//  .banner-img {
-//    height: 450px;
-//    background-image: url('../images/banner-1.jpg');
-//    -webkit-background-size: cover;
-//    background-size: cover;
-//  }
-//}
-
-
-/*
- ** 导航 nav
- */
-
 
 
 /*
@@ -308,13 +284,13 @@
     width: 10%;
   }
   .red {
-    background-color: rgba(235,129,119,0.5);
+    background-color: rgba(97,45,41,0.9);
   }
   .blue {
-    background-color: rgba(117,184,229,0.5);
+    background-color: rgba(26,93,137,0.9);
   }
   .green {
-    background-color: rgba(96,188,177,0.5);
+    background-color: rgba(51,122,114,0.9);
   }
   .group-name {
     text-align: center;
@@ -413,6 +389,7 @@
   }
 
   .useful-links {
+    font-weight: 500;
     li {
       opacity: 0.7;
       &:hover {
@@ -421,15 +398,18 @@
     }
   }
   .contact-us {
-
-    p {
-      margin: 0;
-      font-size: 14px;
-    }
+    font-weight: 500;
   }
   .qr-code {
     .img-qrcode {
-      height: 150px;
+      width: 150px;
+    }
+    .qrcode-desc {
+      width: 150px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0;
     }
   }
 }

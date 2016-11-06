@@ -10,7 +10,6 @@ body
   .header-bg
   a.return-top#return-top(href="#header")
   header.header#header
-    //img.bg-img(src='images/index-bg-4.jpg')
     .bg-layer
     form.searchbar
       input.searchbar_input(type="text" placeholder="keyword")
@@ -18,15 +17,11 @@ body
     .header-text
       p.welcome WELCOME TO
       h1.title 青春川大
-      .desc
+      .desc.mt1
         p
           span 感受青春律动
           span.ml2 释放青春活力
         p —— 触手可及的川大共青团
-    //img.logo
-    //form.searchbar
-    //  input.searchbar_input(type="text" placeholder="关键词")
-    //  input.searchbar_btn(type="submit" value="搜索")
     nav.nav.clearfix.c-w.tc
       ul.navbar.mauto#navbar
         li
@@ -317,6 +312,7 @@ body
         section.x-12.s-12.m-3.l-3.qr-code
           h3 二维码
           img(src="images/qr-code.png").img-qrcode
+          p.qrcode-desc 川大共青团
   script(type="text/javascript" src="js/melon.js")
   script(type="text/javascript" src="js/index.js")
 
