@@ -8,9 +8,13 @@ head
   link(rel="stylesheet" type="text/css" href="css/font-awesome.css")
 body
   .header-bg
-  header.header
+  a.return-top#return-top(href="#header")
+  header.header#header
     //img.bg-img(src='images/index-bg-4.jpg')
     .bg-layer
+    form.searchbar
+      input.searchbar_input(type="text" placeholder="keyword")
+      input.searchbar_btn(type="submit" value="搜索")
     .header-text
       p.welcome WELCOME TO
       h1.title 青春川大
@@ -24,19 +28,19 @@ body
     //  input.searchbar_input(type="text" placeholder="关键词")
     //  input.searchbar_btn(type="submit" value="搜索")
     nav.nav.clearfix.c-w.tc
-      ul.navbar.mauto
+      ul.navbar.mauto#navbar
         li
-          a(href='#special') 专题
+          a.link-spec(href='#special') 专题
         li
-          a(href='#news') 新闻
+          a.link-news(href='#news') 新闻
         li
-          a(href='#notice') 公告
+          a.link-nt(href='#notice') 公告
         li
-          a(href='#youth-league') 川大团委
+          a.link-yl(href='#youth-league') 川大团委
         li
-          a(href='#student-ground') 学生园地
+          a.link-sg(href='#student-ground') 学生园地
         li
-          a(href='#green-channel') 绿色通道
+          a.link-gc(href='#green-channel') 绿色通道
   section.special.clearfix#special
     h2.title.f8.c-grey-2.tc 专题
       span.c-grey-4.fl.ml1.f-rw SPECIAL
@@ -312,6 +316,7 @@ body
               em.op9 85998669
         section.x-12.s-12.m-3.l-3.qr-code
           h3 二维码
+          img(src="images/qr-code.png").img-qrcode
   script(type="text/javascript" src="js/melon.js")
   script(type="text/javascript" src="js/index.js")
 

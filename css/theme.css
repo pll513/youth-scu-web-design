@@ -339,18 +339,20 @@ body {
   height: 100%;
   border: 0;
   font-size: 16px;
+  opacity: 0.5;
 }
 .searchbar_btn {
   width: 60px;
   height: 100%;
   padding: 0;
   border: 0;
-  color: #fff;
-  background-color: #00aeef;
+  color: #fff9b1;
+  background-color: #c0b754;
   font-size: 16px;
+  opacity: 0.5;
 }
 .searchbar_btn:hover {
-  background-color: #0084c2;
+  background-color: #9b933e;
 }
 /*
  ** 公告列表
@@ -363,9 +365,6 @@ body {
   display: inline-block;
   height: 36px;
   margin: 10px auto 0;
-  -ms-text-justify: distribute;
-  text-justify: distribute;
-  text-align: justify;
   padding-left: 16px;
   overflow: hidden;
 }
@@ -373,6 +372,7 @@ body {
   position: relative;
   -ms-text-justify: distribute;
   text-justify: distribute;
+  text-align: justify;
   display: inline-block;
   line-height: 18px;
   height: 18px;

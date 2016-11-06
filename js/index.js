@@ -352,5 +352,123 @@
 
 })(document, window);
 
+(function(doc, w){
+  var header = doc.getElementById('header');
+  var special = doc.getElementById('special');
+  var news = doc.getElementById('news');
+  var notice = doc.getElementById('notice');
+  var youthLeague = doc.getElementById('youth-league');
+  var studentGround = doc.getElementById('student-ground');
+  var greenChannel = doc.getElementById('green-channel');
+  var returnTop = doc.getElementById('return-top');
+  var navBar = doc.getElementById('navbar');
+  var returnToTop;    // 函数: 返回顶部
+  var scrollTo;       // 函数:滑动到指定位置
+  var tScroll;
+  var toggleBtn;
+
+  console.log('green channel: offsetTop: ' + greenChannel.offsetTop);
+
+  scrollTo = function (end, time) {
+    var INTERVAL = 15;
+    var currTop = doc.body.scrollTop;
+    var moveCnt = w.Math.floor(time / INTERVAL);
+    var step = (end - currTop) / moveCnt;
+    var move;
+    if (currTop > end) {
+      move = function () {
+        currTop = doc.body.scrollTop;
+        currTop += step;
+        if (currTop < end) {
+          currTop = end;
+        }
+        doc.body.scrollTop = currTop;
+        if (currTop > end) {
+          tScroll = setTimeout(move, INTERVAL);
+        }
+      }
+    } else if (currTop < end) {
+      move = function () {
+        currTop = doc.body.scrollTop;
+        currTop += step;
+        if (currTop > end) {
+          currTop = end;
+        }
+        doc.body.scrollTop = currTop;
+        if (currTop < end) {
+          tScroll = setTimeout(move, INTERVAL);
+        }
+      }
+
+    } else {
+      return;
+    }
+    tScroll = setTimeout(move , 0);
+  };
+
+  returnToTop = function (event) {
+    var event = event || w.event;
+
+    if (event.preventDefault) {
+      event.preventDefault();
+    } else {
+      event.returnValue = false;
+    }
+    console.log('  scrollTop: ' + doc.body.scrollTop);
+    // 是否需要滑动
+    if (doc.body.scrollTop > 0) {
+      clearTimeout(tScroll);
+      scrollTo(0, 800);
+    }
+
+  };
+
+  scrollToSection = function (event) {
+    var event;
+    var targetClass;
+
+    event = event || w.event;
+    if (event.preventDefault) {
+      event.preventDefault();
+    } else {
+      event.returnValue = false;
+    }
+
+    targetClass = event.target.className;
+    if (targetClass === 'link-spec') {
+      scrollTo(special.offsetTop, 800);
+    } else if (targetClass === 'link-news') {
+      scrollTo(news.offsetTop, 800);
+    } else if (targetClass === 'link-nt') {
+      scrollTo(notice.offsetTop, 800);
+    } else if (targetClass === 'link-yl') {
+      scrollTo(youthLeague.offsetTop, 800);
+    } else if (targetClass === 'link-sg') {
+      scrollTo(studentGround.offsetTop, 800);
+    } else if (targetClass === 'link-gc') {
+      // console.log(greenChannel.offsetTop);
+      // console.log(greenChannel.offsetHeight);
+      // console.log(greenChannel.scrollHeight);
+      scrollTo(greenChannel.offsetTop - (M.getPageHeight() - greenChannel.scrollHeight), 800);
+    }
+  };
+
+  toggleBtn = function () {
+    if (doc.body.scrollTop > header.offsetHeight) {
+      returnTop.style.display = 'block';
+    } else {
+      returnTop.style.display = 'none';
+    }
+  };
+  setInterval(toggleBtn, 30);
+
+
+  M.addListener(returnTop, 'click', returnToTop);
+  M.addListener(navBar, 'click', scrollToSection);
+
+
+
+})(document, window);
+
 
 

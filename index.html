@@ -8,10 +8,14 @@
   <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 </head>
 <body>
-  <div class="header-bg"></div>
-  <header class="header">
+  <div class="header-bg"></div><a id="return-top" href="#header" class="return-top"></a>
+  <header id="header" class="header">
     <!--img.bg-img(src='images/index-bg-4.jpg')-->
     <div class="bg-layer"></div>
+    <form class="searchbar">
+      <input type="text" placeholder="keyword" class="searchbar_input">
+      <input type="submit" value="搜索" class="searchbar_btn">
+    </form>
     <div class="header-text">
       <p class="welcome">WELCOME TO</p>
       <h1 class="title">青春川大</h1>
@@ -25,13 +29,13 @@
     <!--  input.searchbar_input(type="text" placeholder="关键词")-->
     <!--  input.searchbar_btn(type="submit" value="搜索")-->
     <nav class="nav clearfix c-w tc">
-      <ul class="navbar mauto">
-        <li><a href="#special">专题</a></li>
-        <li><a href="#news">新闻</a></li>
-        <li><a href="#notice">公告</a></li>
-        <li><a href="#youth-league">川大团委</a></li>
-        <li><a href="#student-ground">学生园地</a></li>
-        <li><a href="#green-channel">绿色通道</a></li>
+      <ul id="navbar" class="navbar mauto">
+        <li><a href="#special" class="link-spec">专题</a></li>
+        <li><a href="#news" class="link-news">新闻</a></li>
+        <li><a href="#notice" class="link-nt">公告</a></li>
+        <li><a href="#youth-league" class="link-yl">川大团委</a></li>
+        <li><a href="#student-ground" class="link-sg">学生园地</a></li>
+        <li><a href="#green-channel" class="link-gc">绿色通道</a></li>
       </ul>
     </nav>
   </header>
@@ -336,7 +340,7 @@
           </ul>
         </section>
         <section class="x-12 s-12 m-3 l-3 qr-code">
-          <h3>二维码</h3>
+          <h3>二维码</h3><img src="images/qr-code.png" class="img-qrcode">
         </section>
       </div>
     </div>

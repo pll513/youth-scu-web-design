@@ -429,14 +429,15 @@ body {
 @searchbar-height: 36px;
 @searchbar-width: 260px;
 @searchbar-input-width: 200px;
-@searchbar-btn-bg-color: #00aeef;
-@searchbar-btn-hover-bg-color: #0084c2;
-@searchbar-btn-color: #fff;
+@searchbar-btn-bg-color: #c0b754;
+@searchbar-btn-hover-bg-color: #9b933e;
+@searchbar-btn-color: #fff9b1;
 .searchbar {
+  //float:right;
+  //z-index:0;
   width: @searchbar-width;
   height: @searchbar-height;
   font-size: 0;
-
 }
 .searchbar_input {
   -webkit-box-sizing: border-box;
@@ -447,17 +448,19 @@ body {
   height: 100%;
   border: 0;
   font-size: 16px;
+  opacity:0.5;
 }
 .searchbar_btn {
-  width: @searchbar-width - @searchbar-input-width;
+  width: 60px;
   height: 100%;
   padding: 0;
   border: 0;
   color: @searchbar-btn-color;
   background-color: @searchbar-btn-bg-color;
   font-size: 16px;
+  opacity:0.5;
   &:hover {
-    background-color: @searchbar-btn-hover-bg-color;
+    background-color: @searchbar-btn-hover-bg-color
   }
 }
 
@@ -477,16 +480,13 @@ body {
     display: inline-block;
     height: 2 * @li-line-height;
     margin: 10px auto 0;
-    -ms-text-justify: distribute;
-    text-justify: distribute;
-    text-align: justify;
     padding-left: 16px;
     overflow: hidden;
-
     a {
       position: relative;
       -ms-text-justify: distribute;
       text-justify: distribute;
+      text-align: justify;
       display: inline-block;
       line-height: @li-line-height;
       height: @li-line-height;

@@ -17,14 +17,49 @@
   height: 5px;
   background-color: #2d6c65;
 }
+.return-top {
+  display: block;
+  z-index: 9;
+  height: 36px;
+  line-height: 36px;
+  width: 36px;
+  position: fixed;
+  top: 500px;
+  right: 80px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #45a59a;
+  opacity: 0.5;
+  text-align: center;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.return-top:after {
+  content: '\f106';
+  font-family: FontAwesome;
+  font-size: 20px;
+  color: #fff;
+}
+.return-top:hover {
+  cursor: pointer;
+  opacity: 1;
+}
 /*
  ** 页头 header
  */
 .header {
-  min-width: 500px;
+  overflow: hidden;
   z-index: 1;
   position: relative;
   height: 700px;
+}
+.header .searchbar {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .header .bg-img {
   position: absolute;
@@ -78,6 +113,19 @@
 }
 .header .navbar {
   display: inline-block;
+}
+@media (max-width: 767px) {
+  .header .title {
+    font-size: 100px;
+  }
+  .header .navbar a {
+    font-size: 16px;
+    padding: 0 8px;
+  }
+  .header .searchbar {
+    left: 0;
+    margin: auto;
+  }
 }
 /*
  ** 导航 nav
@@ -247,6 +295,9 @@
 }
 .student-ground .notice-list .title,
 .student-ground .notice-list .info {
+  -ms-text-justify: distribute;
+  text-justify: distribute;
+  text-align: justify;
   line-height: 20px;
   margin: 0;
   padding: 0;
@@ -271,6 +322,8 @@
  ** 页脚
  */
 .footer {
+  padding: 0 0 40px;
+  opacity: 0.7;
   background-color: #06324f;
 }
 .footer em {
@@ -297,4 +350,7 @@
 .footer .contact-us p {
   margin: 0;
   font-size: 14px;
+}
+.footer .qr-code .img-qrcode {
+  height: 150px;
 }
