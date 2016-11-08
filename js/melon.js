@@ -1,4 +1,4 @@
-(function (window) {
+(function (window, doc) {
   var melon = (function () {
     var melon = {};
     if (typeof window.addEventListener === 'function') {
@@ -26,10 +26,10 @@
     melon.getPageWidth = function () {
       var pageWidth = window.innerWidth;
       if (typeof pageWidth !== 'number') {
-        if (window.document.compatMode === 'CSS1Compat') {
-          pageWidth = window.document.documentElement.clientWidth;
+        if (doc.compatMode === 'CSS1Compat') {
+          pageWidth = doc.documentElement.clientWidth;
         } else {
-          pageWidth = window.document.body.clientWidth;
+          pageWidth = doc.body.clientWidth;
         }
       }
       return pageWidth;
@@ -37,14 +37,17 @@
     melon.getPageHeight = function () {
       var pageHeight = window.innerHeight;
       if (typeof pageHeight !== 'number') {
-        if (window.document.compatMode === 'CSS1Compat') {
-          pageHeight = window.document.documentElement.clientHeight;
+        if (doc.compatMode === 'CSS1Compat') {
+          pageHeight = doc.documentElement.clientHeight;
         } else {
-          pageHeight = window.document.body.clientHeight;
+          pageHeight = doc.body.clientHeight;
         }
       }
       return pageHeight;
     };
+    melon.scrollTop = function() {
+      return doc.documentElement.scrollTop || window.pageYOffset || doc.body.scrollTop;
+    }
     melon.containClass = function (ele, c) {
       
       var classes = ele.className;
@@ -98,4 +101,4 @@
     return melon;
   })();
   window.M = melon;
-})(window);
+})(window, document);

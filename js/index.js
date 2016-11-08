@@ -2,7 +2,7 @@
  ** 川大团委介绍的滑动效果
  */
 
-(function(doc){
+(function (doc) {
   var btnLeft = doc.getElementById('yl-left');
   var btnRight = doc.getElementById('yl-right');
   var introList = doc.getElementById('intro-list');
@@ -37,7 +37,7 @@
     } else {
       // 向左滑动
       end = (Math.ceil(start / 100) - 1) * 100;
-      if (start === - (itemCnt - 1) * 100) {
+      if (start === -(itemCnt - 1) * 100) {
         end = start;
       }
       return function move() {
@@ -54,12 +54,12 @@
     }
   };
 
-  var slideLeft = function() {
+  var slideLeft = function () {
     clearTimeout(tMove);
     var move = getMove(introList, -1, 500);
     tMove = setTimeout(move, 0);
   };
-  var slideRight = function() {
+  var slideRight = function () {
     clearTimeout(tMove);
     var move = getMove(introList, 1, 500);
     tMove = setTimeout(move, 0);
@@ -73,7 +73,7 @@
     // 转方向的判定
     if (direction < 0) {
       slideLeft();
-      if (start === - (itemCnt - 1) * 100) {
+      if (start === -(itemCnt - 1) * 100) {
         direction *= -1;
       }
 
@@ -255,11 +255,11 @@
     tAutoSlide = setTimeout(autoSlide, AUTO_SLIDE_INTERVAL);
   };
 
-  stopAutoSlide = function() {
+  stopAutoSlide = function () {
     clearTimeout(tAutoSlide);
   };
 
-  restartAutoSlide = function() {
+  restartAutoSlide = function () {
     tAutoSlide = setTimeout(autoSlide, AUTO_SLIDE_INTERVAL);
   };
 
@@ -352,7 +352,7 @@
 
 })(document, window);
 
-(function(doc, w){
+(function (doc, w) {
   var header = doc.getElementById('header');
   var special = doc.getElementById('special');
   var news = doc.getElementById('news');
@@ -367,14 +367,24 @@
   var tScroll;
   var toggleBtn;
 
-  console.log('green channel: offsetTop: ' + greenChannel.offsetTop);
-
   scrollTo = function (end, time) {
     var INTERVAL = 15;
     var currTop = doc.body.scrollTop;
     var moveCnt = w.Math.floor(time / INTERVAL);
     var step = (end - currTop) / moveCnt;
     var move;
+    var pageHeight = M.getPageHeight();       // 视窗高度
+    var docHeight = doc.documentElement.offsetHeight; // 文档实际高度
+    var maxOffset = docHeight > pageHeight ? docHeight - pageHeight : docHeight;  // 离顶部的最大偏移值
+    
+    console.log('docHeight: ' + docHeight);
+    console.log('end initial: ' + end);
+    
+    end = end > maxOffset ? maxOffset : end;
+    
+    if (end < 0) {
+      end = 0;
+    }
     if (currTop > end) {
       move = function () {
         currTop = doc.body.scrollTop;
@@ -403,7 +413,7 @@
     } else {
       return;
     }
-    tScroll = setTimeout(move , 0);
+    tScroll = setTimeout(move, 0);
   };
 
   returnToTop = function (event) {
@@ -446,15 +456,13 @@
     } else if (targetClass === 'link-sg') {
       scrollTo(studentGround.offsetTop, 800);
     } else if (targetClass === 'link-gc') {
-      // console.log(greenChannel.offsetTop);
-      // console.log(greenChannel.offsetHeight);
-      // console.log(greenChannel.scrollHeight);
-      scrollTo(greenChannel.offsetTop - (M.getPageHeight() - greenChannel.scrollHeight), 800);
+      scrollTo(greenChannel.offsetTop, 800);
     }
   };
 
   toggleBtn = function () {
-    if (doc.body.scrollTop > header.offsetHeight) {
+    
+    if (M.scrollTop() > header.offsetHeight) {
       returnTop.style.display = 'block';
     } else {
       returnTop.style.display = 'none';
@@ -462,10 +470,8 @@
   };
   setInterval(toggleBtn, 30);
 
-
   M.addListener(returnTop, 'click', returnToTop);
   M.addListener(navBar, 'click', scrollToSection);
-
 
 
 })(document, window);
