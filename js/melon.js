@@ -85,6 +85,54 @@
         return doc.documentElement.scrollTop || doc.body.scrollTop;
       };
     }
+    melon.scrollTo = function (end, time) {
+      var tScroll;
+      var INTERVAL = 15;
+      var currTop = M.getScrollTop();
+      var moveCnt = Math.floor(time / INTERVAL);
+      var step = (end - currTop) / moveCnt;
+      var move;
+      var pageHeight = M.getPageHeight();       // 视窗高度
+      var docHeight = doc.documentElement.offsetHeight; // 文档实际高度
+      var maxOffset = docHeight > pageHeight ? docHeight - pageHeight : docHeight;  // 离顶部的最大偏移值
+    
+      end = end > maxOffset ? maxOffset : end;
+    
+      if (end < 0) {
+        end = 0;
+      }
+      if (currTop > end) {
+        move = function () {
+          currTop = M.getScrollTop();
+          currTop += step;
+          if (currTop < end) {
+            currTop = end;
+          }
+          M.setScrollTop(currTop);
+          if (currTop > end) {
+            tScroll = setTimeout(move, INTERVAL);
+          }
+        }
+      } else if (currTop < end) {
+        move = function () {
+          currTop = M.getScrollTop();
+          console.log(currTop);
+          currTop += step;
+          if (currTop > end) {
+            currTop = end;
+          }
+          M.setScrollTop(currTop);
+          if (currTop < end) {
+            tScroll = setTimeout(move, INTERVAL);
+          }
+        }
+      
+      } else {
+        return;
+      }
+      tScroll = setTimeout(move, 0);
+      return tScroll;
+    };
     // melon.scrollTop = function() {
     //   return doc.documentElement.scrollTop || window.pageYOffset || doc.body.scrollTop;
     // };

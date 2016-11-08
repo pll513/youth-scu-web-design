@@ -363,56 +363,56 @@
   var returnTop = doc.getElementById('return-top');
   var navBar = doc.getElementById('navbar');
   var returnToTop;    // 函数: 返回顶部
-  var scrollTo;       // 函数:滑动到指定位置
   var tScroll;
   var toggleBtn;
+  var scrollToSection;
 
-  scrollTo = function (end, time) {
-    var INTERVAL = 15;
-    var currTop = M.getScrollTop();
-    var moveCnt = w.Math.floor(time / INTERVAL);
-    var step = (end - currTop) / moveCnt;
-    var move;
-    var pageHeight = M.getPageHeight();       // 视窗高度
-    var docHeight = doc.documentElement.offsetHeight; // 文档实际高度
-    var maxOffset = docHeight > pageHeight ? docHeight - pageHeight : docHeight;  // 离顶部的最大偏移值
-    
-    end = end > maxOffset ? maxOffset : end;
-    
-    if (end < 0) {
-      end = 0;
-    }
-    if (currTop > end) {
-      move = function () {
-        currTop = M.getScrollTop();
-        currTop += step;
-        if (currTop < end) {
-          currTop = end;
-        }
-        M.setScrollTop(currTop);
-        if (currTop > end) {
-          tScroll = setTimeout(move, INTERVAL);
-        }
-      }
-    } else if (currTop < end) {
-      move = function () {
-        currTop = M.getScrollTop();
-        console.log(currTop);
-        currTop += step;
-        if (currTop > end) {
-          currTop = end;
-        }
-        M.setScrollTop(currTop);
-        if (currTop < end) {
-          tScroll = setTimeout(move, INTERVAL);
-        }
-      }
-
-    } else {
-      return;
-    }
-    tScroll = setTimeout(move, 0);
-  };
+  // scrollTo = function (end, time) {
+  //   var INTERVAL = 15;
+  //   var currTop = M.getScrollTop();
+  //   var moveCnt = w.Math.floor(time / INTERVAL);
+  //   var step = (end - currTop) / moveCnt;
+  //   var move;
+  //   var pageHeight = M.getPageHeight();       // 视窗高度
+  //   var docHeight = doc.documentElement.offsetHeight; // 文档实际高度
+  //   var maxOffset = docHeight > pageHeight ? docHeight - pageHeight : docHeight;  // 离顶部的最大偏移值
+  //
+  //   end = end > maxOffset ? maxOffset : end;
+  //
+  //   if (end < 0) {
+  //     end = 0;
+  //   }
+  //   if (currTop > end) {
+  //     move = function () {
+  //       currTop = M.getScrollTop();
+  //       currTop += step;
+  //       if (currTop < end) {
+  //         currTop = end;
+  //       }
+  //       M.setScrollTop(currTop);
+  //       if (currTop > end) {
+  //         tScroll = setTimeout(move, INTERVAL);
+  //       }
+  //     }
+  //   } else if (currTop < end) {
+  //     move = function () {
+  //       currTop = M.getScrollTop();
+  //       console.log(currTop);
+  //       currTop += step;
+  //       if (currTop > end) {
+  //         currTop = end;
+  //       }
+  //       M.setScrollTop(currTop);
+  //       if (currTop < end) {
+  //         tScroll = setTimeout(move, INTERVAL);
+  //       }
+  //     }
+  //
+  //   } else {
+  //     return;
+  //   }
+  //   tScroll = setTimeout(move, 0);
+  // };
 
   returnToTop = function (e) {
     var event = e || w.event;
@@ -426,7 +426,7 @@
     // 是否需要滑动
     if (M.getScrollTop() > 0) {
       clearTimeout(tScroll);
-      scrollTo(0, 800);
+      M.scrollTo(0, 800);
     }
 
   };
@@ -444,17 +444,17 @@
 
     targetClass = event.target.className;
     if (targetClass === 'link-spec') {
-      scrollTo(special.offsetTop, 800);
+      M.scrollTo(special.offsetTop, 800);
     } else if (targetClass === 'link-news') {
-      scrollTo(news.offsetTop, 800);
+      M.scrollTo(news.offsetTop, 800);
     } else if (targetClass === 'link-nt') {
-      scrollTo(notice.offsetTop, 800);
+      M.scrollTo(notice.offsetTop, 800);
     } else if (targetClass === 'link-yl') {
-      scrollTo(youthLeague.offsetTop, 800);
+      M.scrollTo(youthLeague.offsetTop, 800);
     } else if (targetClass === 'link-sg') {
-      scrollTo(studentGround.offsetTop, 800);
+      M.scrollTo(studentGround.offsetTop, 800);
     } else if (targetClass === 'link-gc') {
-      scrollTo(greenChannel.offsetTop, 800);
+      M.scrollTo(greenChannel.offsetTop, 800);
     }
   };
 
