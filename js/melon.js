@@ -19,7 +19,7 @@
       melon.addListener = function (el, type, fn) {
         el['on' + type] = fn;
       };
-      melon.removeListener = function (el, type, fn) {
+      melon.removeListener = function (el, type) {
         el['on' + type] = null;
       };
     }
@@ -45,9 +45,49 @@
       }
       return pageHeight;
     };
-    melon.scrollTop = function() {
-      return doc.documentElement.scrollTop || window.pageYOffset || doc.body.scrollTop;
+    // if (typeof window.pageYOffset === 'number') {
+    //   melon.setScrollTop = function (top) {
+    //     window.pageYOffset = top;
+    //   };
+    // } else {
+    //   melon.setScrollTop = function (top) {
+    //     doc.documentElement.scrollTop = top;
+    //     doc.body.scrollTop = top;
+    //   };
+    // }
+    melon.setScrollTop = function (top) {
+      doc.documentElement.scrollTop = top;
+      doc.body.scrollTop = top;
+    };
+    if (typeof window.pageYOffset === 'number') {
+      melon.getScrollTop = function () {
+        return window.pageYOffset;
+      };
+    } else {
+      melon.getScrollTop = function () {
+        if (doc.documentElement.scrollTop > 0) {
+          melon.getScrollTop = function () {
+            return doc.documentElement.scrollTop;
+          };
+          melon.setScrollTop = function (top) {
+            doc.documentElement.scrollTop = top;
+          };
+          return doc.documentElement.scrollTop;
+        } else if (doc.body.scrollTop > 0) {
+          melon.getScrollTop = function () {
+            return doc.body.scrollTop;
+          };
+          melon.setScrollTop = function (top) {
+            doc.body.scrollTop = top;
+          };
+          return doc.body.scrollTop;
+        }
+        return doc.documentElement.scrollTop || doc.body.scrollTop;
+      };
     }
+    // melon.scrollTop = function() {
+    //   return doc.documentElement.scrollTop || window.pageYOffset || doc.body.scrollTop;
+    // };
     melon.containClass = function (ele, c) {
       
       var classes = ele.className;

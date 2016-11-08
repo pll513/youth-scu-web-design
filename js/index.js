@@ -369,16 +369,13 @@
 
   scrollTo = function (end, time) {
     var INTERVAL = 15;
-    var currTop = doc.body.scrollTop;
+    var currTop = M.getScrollTop();
     var moveCnt = w.Math.floor(time / INTERVAL);
     var step = (end - currTop) / moveCnt;
     var move;
     var pageHeight = M.getPageHeight();       // 视窗高度
     var docHeight = doc.documentElement.offsetHeight; // 文档实际高度
     var maxOffset = docHeight > pageHeight ? docHeight - pageHeight : docHeight;  // 离顶部的最大偏移值
-    
-    console.log('docHeight: ' + docHeight);
-    console.log('end initial: ' + end);
     
     end = end > maxOffset ? maxOffset : end;
     
@@ -387,24 +384,25 @@
     }
     if (currTop > end) {
       move = function () {
-        currTop = doc.body.scrollTop;
+        currTop = M.getScrollTop();
         currTop += step;
         if (currTop < end) {
           currTop = end;
         }
-        doc.body.scrollTop = currTop;
+        M.setScrollTop(currTop);
         if (currTop > end) {
           tScroll = setTimeout(move, INTERVAL);
         }
       }
     } else if (currTop < end) {
       move = function () {
-        currTop = doc.body.scrollTop;
+        currTop = M.getScrollTop();
+        console.log(currTop);
         currTop += step;
         if (currTop > end) {
           currTop = end;
         }
-        doc.body.scrollTop = currTop;
+        M.setScrollTop(currTop);
         if (currTop < end) {
           tScroll = setTimeout(move, INTERVAL);
         }
@@ -416,8 +414,8 @@
     tScroll = setTimeout(move, 0);
   };
 
-  returnToTop = function (event) {
-    var event = event || w.event;
+  returnToTop = function (e) {
+    var event = e || w.event;
 
     if (event.preventDefault) {
       event.preventDefault();
@@ -426,18 +424,18 @@
     }
     console.log('  scrollTop: ' + doc.body.scrollTop);
     // 是否需要滑动
-    if (doc.body.scrollTop > 0) {
+    if (M.getScrollTop() > 0) {
       clearTimeout(tScroll);
       scrollTo(0, 800);
     }
 
   };
 
-  scrollToSection = function (event) {
+  scrollToSection = function (e) {
     var event;
     var targetClass;
 
-    event = event || w.event;
+    event = e || w.event;
     if (event.preventDefault) {
       event.preventDefault();
     } else {
@@ -462,7 +460,7 @@
 
   toggleBtn = function () {
     
-    if (M.scrollTop() > header.offsetHeight) {
+    if (M.getScrollTop() > header.offsetHeight) {
       returnTop.style.display = 'block';
     } else {
       returnTop.style.display = 'none';
