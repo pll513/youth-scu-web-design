@@ -207,7 +207,7 @@
 .header-bg {
   position: fixed;
   top: 0;
-  z-index: -1;
+  z-index: -9;
   width: 100%;
   height: 100%;
   background-image: url('../images/index-bg-3.jpg');
@@ -222,18 +222,21 @@
   overflow: hidden;
 }
 .youth-league .title {
+  z-index: 1;
   position: absolute;
   margin: 0;
   top: 40px;
   width: 100%;
 }
 .youth-league .title-desc {
+  z-index: 1;
   width: 100%;
   position: absolute;
   top: 90px;
   color: white;
 }
 .youth-league .arrow {
+  z-index: 1;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -247,23 +250,24 @@
 }
 .youth-league .intro-list {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   width: 1000%;
   height: 100%;
 }
 .youth-league .intro-wrap {
+  opacity: 0.9;
   float: left;
   height: 100%;
   width: 10%;
 }
 .youth-league .red {
-  background-color: rgba(97, 45, 41, 0.9);
+  background-color: #612d29;
 }
 .youth-league .blue {
-  background-color: rgba(26, 93, 137, 0.9);
+  background-color: #1a5d89;
 }
 .youth-league .green {
-  background-color: rgba(51, 122, 114, 0.9);
+  background-color: #337a72;
 }
 .youth-league .group-name {
   text-align: center;
@@ -275,19 +279,8 @@
   text-align: center;
   opacity: 0.9;
 }
-*.youth-league .red,
-*.youth-league .blue,
-*.youth-league .green {
-  filter: alpha(opacity = 90);
-}
-*.youth-league .red {
-  background-color: #612d29;
-}
-*.youth-league .blue {
-  background-color: #1a5d89;
-}
-*.youth-league .green {
-  background-color: #337a72;
+*.youth-league .intro-wrap {
+  fliter: alpha(opacity=90);
 }
 /*
  ** 学生园地
@@ -343,12 +336,17 @@
  ** 页脚
  */
 .footer {
+  z-index: 0;
   position: relative;
   padding: 0 0 40px;
 }
 .footer .bg-layer {
+  z-index: -9;
   background-color: #06324f;
   opacity: 0.7;
+}
+.footer .container {
+  z-index: 1;
 }
 .footer em {
   font-style: italic;
@@ -368,19 +366,21 @@
 .footer .contact-us li {
   opacity: 0.7;
 }
-.footer .useful-links {
+.footer .contact-us li a {
   font-weight: 500;
 }
 .footer .useful-links li {
   opacity: 0.7;
 }
+.footer .useful-links li a {
+  font-weight: 500;
+}
 .footer .useful-links li:hover {
   opacity: 0.9;
 }
-.footer .contact-us {
-  font-weight: 500;
-}
 .footer .qr-code .img-qrcode {
+  z-index: 10;
+  display: block;
   width: 150px;
 }
 .footer .qr-code .qrcode-desc {
@@ -388,7 +388,7 @@
   text-align: center;
   font-size: 16px;
   font-weight: 500;
-  margin: 0;
+  margin: 5px 0 0;
 }
 *.footer .bg-layer {
   filter: alpha(opacity = 70);

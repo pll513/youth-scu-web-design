@@ -237,7 +237,7 @@
 .header-bg {
   position: fixed;
   top: 0;
-  z-index: -1;
+  z-index: -9;
   width: 100%;
   height: 100%;
   background-image: url('../images/index-bg-3.jpg');
@@ -253,18 +253,21 @@
   overflow: hidden;
 
   .title {
+    z-index: 1;
     position: absolute;
     margin: 0;
     top: 40px;
     width: 100%;
   }
   .title-desc {
+    z-index: 1;
     width: 100%;
     position: absolute;
     top: 90px;
     color: white;
   }
   .arrow {
+    z-index: 1;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -278,23 +281,24 @@
   }
   .intro-list {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     width: 1000%;
     height: 100%;
   }
   .intro-wrap {
+    opacity: 0.9;
     float: left;
     height: 100%;
     width: 10%;
   }
   .red {
-    background-color: rgba(97,45,41,0.9);
+    background-color: #612d29;
   }
   .blue {
-    background-color: rgba(26,93,137,0.9);
+    background-color: #1a5d89;
   }
   .green {
-    background-color: rgba(51,122,114,0.9);
+    background-color: #337a72;
   }
   .group-name {
     text-align: center;
@@ -308,17 +312,8 @@
   }
 }
 *.youth-league {
-  .red, .blue, .green {
-    filter: ~"alpha(opacity = 90)";
-  }
-  .red {
-    background-color: #612d29;
-  }
-  .blue {
-    background-color: #1a5d89;
-  }
-  .green {
-    background-color: #337a72;
+  .intro-wrap {
+    fliter: ~"alpha(opacity=90)";
   }
 }
 
@@ -385,11 +380,16 @@
 
 
 .footer {
+  z-index: 0;
   position: relative;
   padding: 0 0 40px;
   .bg-layer {
-    background-color: @footer-bg-color;;
+    z-index: -9;
+    background-color: @footer-bg-color;
     opacity: 0.7;
+  }
+  .container {
+    z-index: 1;
   }
   em {
     font-style: italic;
@@ -408,24 +408,27 @@
   }
   .contact-us {
     li {
+      a {
+        font-weight: 500;
+      }
       opacity: 0.7;
     }
   }
-
   .useful-links {
-    font-weight: 500;
     li {
       opacity: 0.7;
+      a {
+        font-weight: 500;
+      }
       &:hover {
         opacity: 0.9;
       }
     }
   }
-  .contact-us {
-    font-weight: 500;
-  }
   .qr-code {
     .img-qrcode {
+      z-index: 10;
+      display: block;
       width: 150px;
     }
     .qrcode-desc {
@@ -433,7 +436,7 @@
       text-align: center;
       font-size: 16px;
       font-weight: 500;
-      margin: 0;
+      margin: 5px 0 0;
     }
   }
 }
