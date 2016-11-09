@@ -789,6 +789,21 @@ button {
 .op5 {
   opacity: 0.5;
 }
+*.op9 {
+  filter: alpha(opacity=90);
+}
+*.op8 {
+  filter: alpha(opacity=80);
+}
+*.op7 {
+  filter: alpha(opacity=70);
+}
+*.op6 {
+  filter: alpha(opacity=60);
+}
+*.op5 {
+  filter: alpha(opacity=50);
+}
 /*
  ******************************* 浮动栅格 *******************************
  */

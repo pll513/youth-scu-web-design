@@ -95,7 +95,7 @@
 
 (function (doc, w) {
   var newsList = doc.getElementById('news-list');               // 要滚动的新闻列表
-  var newsWrap = newsList.getElementsByClassName('news-wrap');  // 所有新闻
+  var newsWrap = M.getElementsByClassName('news-wrap', newsList); // 所有新闻
   var newsListWrap = doc.getElementById('news-list-wrap');      // 滚动列表容器
   var newsCnt = newsWrap.length;  // 新闻总条数
   var pageSize;                   // 一个新闻页面的新闻条数
@@ -143,8 +143,7 @@
     var step;                                           // 每次移动的步长
     var start = parseFloat(ele.style.left);             // 起点
     var end = destArr[endIndex];                        // 终点
-
-    // step = w.Math.abs(endIndex - startIndex) * 100 / moveCnt;
+    
     step = 100 / moveCnt;
 
     if (step === 0) {
@@ -304,7 +303,7 @@
       pagination.appendChild(page);
     }
     newsListWrap.appendChild(pagination);
-    pages = pagination.getElementsByClassName('page');
+    pages = M.getElementsByClassName('page', pagination);
     M.addClass(pages[0], 'active');
 
 

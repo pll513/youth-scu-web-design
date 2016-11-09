@@ -1,6 +1,26 @@
 (function (window, doc) {
   var melon = (function () {
+    
     var melon = {};
+    
+    melon.method = function (ele, funcName, func) {
+      if (!ele.prototype[funcName]) {
+        ele.prototype[funcName] = func;
+      }
+      return this;
+    };
+    
+    melon.method(Array, 'indexOf', function(ele) {
+      var i;
+      var len = this.length;
+      for (i = 0; i < len; ++i) {
+        if (this[i] === ele) {
+          return i;
+        }
+      }
+      return -1;
+    });
+    
     if (typeof window.addEventListener === 'function') {
       melon.addListener = function (el, type, fn) {
         el.addEventListener(type, fn, false);
@@ -45,16 +65,6 @@
       }
       return pageHeight;
     };
-    // if (typeof window.pageYOffset === 'number') {
-    //   melon.setScrollTop = function (top) {
-    //     window.pageYOffset = top;
-    //   };
-    // } else {
-    //   melon.setScrollTop = function (top) {
-    //     doc.documentElement.scrollTop = top;
-    //     doc.body.scrollTop = top;
-    //   };
-    // }
     melon.setScrollTop = function (top) {
       doc.documentElement.scrollTop = top;
       doc.body.scrollTop = top;
@@ -185,7 +195,44 @@
         return true;
       }
     };
-    
+    melon.getElementsByClassName = function (className, root, tag) {
+      
+      var elementList = [];
+      var elements;
+      var element;
+      var i;
+      var j;
+      var lenElements;
+      var lenClassList;
+      var classList;
+      
+      root = typeof root === 'string' ? doc.getElementById(root) : root;
+      if (!root) {
+        root = doc.body;
+      }
+  
+      if ( typeof root.getElementsByClassName === 'function') {
+        return root.getElementsByClassName(className);
+      }
+      
+      tag = tag || '*';
+      elements = root.getElementsByTagName(tag);
+      
+      for (i = 0, lenElements = elements.length; i < lenElements; ++i) {
+        element = elements[i];
+        classList = element.className.split(' ');
+        lenClassList = classList.length;
+        for (j = 0; j < lenClassList; ++j) {
+          if (classList[j] === className) {
+            elementList.push(element);
+            break;
+          }
+        }
+      }
+      
+      return elementList;
+      
+    };
     return melon;
   })();
   window.M = melon;

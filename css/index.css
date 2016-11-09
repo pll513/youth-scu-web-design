@@ -10,6 +10,16 @@
   font-weight: 300;
   margin: 0;
 }
+.bg-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: -1;
+}
+*.bg-layer {
+  filter: alpha(opacity=50);
+}
 .divider {
   display: block;
   margin: 25px auto 40px;
@@ -39,13 +49,19 @@
 }
 .return-top:after {
   content: '\f106';
-  font-family: FontAwesome;
+  font-family: FontAwesome, sans-serif;
   font-size: 20px;
   color: #fff;
 }
 .return-top:hover {
   cursor: pointer;
   opacity: 1;
+}
+*.return-top {
+  filter: alpha(opacity=50);
+}
+*.return-top:hover {
+  filter: alpha(opacity=100);
 }
 /*
  ** 页头 header
@@ -70,11 +86,7 @@
   z-index: -2;
 }
 .header .bg-layer {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(30, 72, 67, 0.5);
-  z-index: -1;
+  background-color: #1E4843;
 }
 .header .header-text {
   width: 100%;
@@ -83,7 +95,7 @@
   text-align: center;
 }
 .header .welcome {
-  font-family: Raleway;
+  font-family: Raleway, sans-serif;
   color: #fff;
   font-size: 40px;
   margin: 0;
@@ -263,6 +275,20 @@
   text-align: center;
   opacity: 0.9;
 }
+*.youth-league .red,
+*.youth-league .blue,
+*.youth-league .green {
+  filter: alpha(opacity = 90);
+}
+*.youth-league .red {
+  background-color: #612d29;
+}
+*.youth-league .blue {
+  background-color: #1a5d89;
+}
+*.youth-league .green {
+  background-color: #337a72;
+}
 /*
  ** 学生园地
  */
@@ -317,9 +343,12 @@
  ** 页脚
  */
 .footer {
+  position: relative;
   padding: 0 0 40px;
-  opacity: 0.7;
+}
+.footer .bg-layer {
   background-color: #06324f;
+  opacity: 0.7;
 }
 .footer em {
   font-style: italic;
@@ -335,6 +364,9 @@
   font-size: 24px;
   line-height: 60px;
   margin: 0;
+}
+.footer .contact-us li {
+  opacity: 0.7;
 }
 .footer .useful-links {
   font-weight: 500;
@@ -357,4 +389,19 @@
   font-size: 16px;
   font-weight: 500;
   margin: 0;
+}
+*.footer .bg-layer {
+  filter: alpha(opacity = 70);
+}
+*.footer h3 {
+  filter: alpha(opacity = 90);
+}
+*.footer .useful-links li {
+  filter: alpha(opacity=70);
+}
+*.footer .useful-links li:hover {
+  filter: alpha(opacity=90);
+}
+*.footer .contact-us li {
+  filter: alpha(opacity=70);
 }
