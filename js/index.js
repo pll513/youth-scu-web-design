@@ -314,7 +314,7 @@
       (function (i) {
         M.addListener(pages[i], 'click', function () {
           clearTimeout(tMove);
-          tMove = setTimeout(slideNews(i), 0);
+          tMove = setTimeout(function(){slideNews(i)}, 0);
         });
       })(i);
 
@@ -335,8 +335,6 @@
     var pageSizeNew = getPageSize();
 
     if (pageSizeNew !== pageSize) {
-      console.log('tEachSlide: ' + tEachSlide);
-      console.log('tAutoSlide: ' + tAutoSlide);
       clearTimeout(tMove);
       clearTimeout(tEachSlide);
       clearTimeout(tAutoSlide);
@@ -361,57 +359,10 @@
   var greenChannel = doc.getElementById('green-channel');
   var returnTop = doc.getElementById('return-top');
   var navBar = doc.getElementById('navbar');
-  var returnToTop;    // 函数: 返回顶部
+  var returnToTop;    // 函数：返回顶部
+  var toggleBtn;      // 函数：交替按钮透明度
+  var scrollToSection;  // 函数：跳转到对应部分
   var tScroll;
-  var toggleBtn;
-  var scrollToSection;
-
-  // scrollTo = function (end, time) {
-  //   var INTERVAL = 15;
-  //   var currTop = M.getScrollTop();
-  //   var moveCnt = w.Math.floor(time / INTERVAL);
-  //   var step = (end - currTop) / moveCnt;
-  //   var move;
-  //   var pageHeight = M.getPageHeight();       // 视窗高度
-  //   var docHeight = doc.documentElement.offsetHeight; // 文档实际高度
-  //   var maxOffset = docHeight > pageHeight ? docHeight - pageHeight : docHeight;  // 离顶部的最大偏移值
-  //
-  //   end = end > maxOffset ? maxOffset : end;
-  //
-  //   if (end < 0) {
-  //     end = 0;
-  //   }
-  //   if (currTop > end) {
-  //     move = function () {
-  //       currTop = M.getScrollTop();
-  //       currTop += step;
-  //       if (currTop < end) {
-  //         currTop = end;
-  //       }
-  //       M.setScrollTop(currTop);
-  //       if (currTop > end) {
-  //         tScroll = setTimeout(move, INTERVAL);
-  //       }
-  //     }
-  //   } else if (currTop < end) {
-  //     move = function () {
-  //       currTop = M.getScrollTop();
-  //       console.log(currTop);
-  //       currTop += step;
-  //       if (currTop > end) {
-  //         currTop = end;
-  //       }
-  //       M.setScrollTop(currTop);
-  //       if (currTop < end) {
-  //         tScroll = setTimeout(move, INTERVAL);
-  //       }
-  //     }
-  //
-  //   } else {
-  //     return;
-  //   }
-  //   tScroll = setTimeout(move, 0);
-  // };
 
   returnToTop = function (e) {
     var event = e || w.event;
@@ -421,7 +372,7 @@
     } else {
       event.returnValue = false;
     }
-    console.log('  scrollTop: ' + doc.body.scrollTop);
+    
     // 是否需要滑动
     if (M.getScrollTop() > 0) {
       clearTimeout(tScroll);
@@ -432,6 +383,7 @@
 
   scrollToSection = function (e) {
     var event;
+    var target;
     var targetClass;
 
     event = e || w.event;
@@ -440,8 +392,9 @@
     } else {
       event.returnValue = false;
     }
-
-    targetClass = event.target.className;
+    
+    target = event.target || event.srcElement;
+    targetClass = target.className;
     if (targetClass === 'link-spec') {
       M.scrollTo(special.offsetTop, 800);
     } else if (targetClass === 'link-news') {
@@ -465,11 +418,11 @@
       returnTop.style.display = 'none';
     }
   };
+  
   setInterval(toggleBtn, 30);
 
   M.addListener(returnTop, 'click', returnToTop);
   M.addListener(navBar, 'click', scrollToSection);
-
 
 })(document, window);
 

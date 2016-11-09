@@ -103,9 +103,9 @@
       var step = (end - currTop) / moveCnt;
       var move;
       var pageHeight = M.getPageHeight();       // 视窗高度
-      var docHeight = doc.documentElement.offsetHeight; // 文档实际高度
+      var docHeight = doc.documentElement.scrollHeight; // 文档实际高度
       var maxOffset = docHeight > pageHeight ? docHeight - pageHeight : docHeight;  // 离顶部的最大偏移值
-    
+      
       end = end > maxOffset ? maxOffset : end;
     
       if (end < 0) {
@@ -126,7 +126,6 @@
       } else if (currTop < end) {
         move = function () {
           currTop = M.getScrollTop();
-          console.log(currTop);
           currTop += step;
           if (currTop > end) {
             currTop = end;
@@ -143,9 +142,7 @@
       tScroll = setTimeout(move, 0);
       return tScroll;
     };
-    // melon.scrollTop = function() {
-    //   return doc.documentElement.scrollTop || window.pageYOffset || doc.body.scrollTop;
-    // };
+    
     melon.containClass = function (ele, c) {
       
       var classes = ele.className;

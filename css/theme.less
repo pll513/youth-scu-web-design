@@ -5,14 +5,15 @@
 
 @font-face {
   font-family: 'Raleway';
-  src: url('../fonts/Raleway-Light.ttf');
+  src: url('../fonts/raleway-light.eot');
+  src: url('../fonts/raleway-light.eot') format('embedded-opentype'), url('../fonts/raleway-light.woff2') format('woff2'), url('../fonts/raleway-light.woff') format('woff'), url('../fonts/raleway-light.ttf') format('truetype'), url('../fonts/raleway-light.svg#RaleWay.svg') format('svg');
 }
 body {
   font-family: Arial, Helvetica, sans-serif, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei';
 }
 
 .f-rw {
-  font-family: 'Raleway';
+  font-family: 'Raleway', 'Microsoft YaHei', sans-serif;
 }
 
 
@@ -259,7 +260,8 @@ body {
     color: transparent;
     opacity: 0;
     content: 'MORE';
-    font-family: Raleway;
+    font-family: Raleway, 'Microsoft YaHei', sans-serif;
+    font-weight: 300;
     font-size: 30px;
     text-align: center;
     line-height: @link-img-img-height;
