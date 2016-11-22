@@ -20,7 +20,7 @@
         </array>
       </option>
       <option name="outputFromStdout" value="true" />
-      <option name="program" value="/usr/local/bin/lessc" />
+      <option name="program" value="$USER_HOME$/AppData/Roaming/npm/lessc.cmd" />
       <option name="scopeName" value="Changed Files" />
       <option name="trackOnlyRoot" value="false" />
       <option name="workingDir" value="$FileDir$" />
@@ -39,7 +39,7 @@
         <array />
       </option>
       <option name="outputFromStdout" value="false" />
-      <option name="program" value="/usr/local/bin/jade" />
+      <option name="program" value="$USER_HOME$/AppData/Roaming/npm/jade.cmd" />
       <option name="scopeName" value="Project Files" />
       <option name="trackOnlyRoot" value="true" />
       <option name="workingDir" value="$FileDir$" />
