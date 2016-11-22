@@ -25,3 +25,14 @@ section {
 .sec-arrow {
   background-color: #45a59a;
 }
+.news-list li {
+  width: 600px;
+}
+.news-list li:before,
+.news-list li:after {
+  content: "";
+  display: table;
+}
+.news-list li:after {
+  clear: both;
+}

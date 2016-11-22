@@ -1,4 +1,46 @@
 /*
+ ** banner打字效果
+ */
+
+(function(doc) {
+  // var headerText = doc.getElementById('header-text');
+  // var texts = headerText.getElementsByTagName('span');
+  var texts = doc.querySelectorAll('#header-text span');
+  var i;
+  var currIndex = 0;
+  var len = texts.length;
+  var showText = function(ele) {
+    ele.style.visibility = 'visible';
+  }
+  for (i = 0; i < len; ++i ) {
+    (function(i){
+      setTimeout(function() {
+        showText(texts[i]);
+      }, 100 * i);
+    })(i);
+  }
+  // var tShowText = setInterval(function() {
+  //   texts[currIndex++].style.visibility = 'visible';
+  //   if (currIndex === len - 1) {
+  //     clearInterval(tShowText);
+  //   }
+  // }, 100);
+  // setTimeout(function() {
+  //   texts[0].style.visibility = 'visible';
+  // }, 1000);
+  // setTimeout(function() {
+  //   texts[1].style.visibility = 'visible';
+  // }, 2000);
+  // setTimeout(function() {
+  //   texts[2].style.visibility = 'visible';
+  // }, 3000);
+  // setTimeout(function() {
+  //   texts[3].style.visibility = 'visible';
+  // }, 4000);
+})(document);
+
+
+/*
  ** 川大团委介绍的滑动效果
  */
 

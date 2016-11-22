@@ -137,6 +137,9 @@
     padding: 0 8px;
   }
 }
+.header-text span {
+  visibility: hidden;
+}
 /*
  ** 新闻
  */

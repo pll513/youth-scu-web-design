@@ -31,3 +31,15 @@ section {
   background-color: #45a59a;
 }
 
+.news-list{
+  li {
+    width: 600px;
+    &:before, &:after {
+      content: "";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+}

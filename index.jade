@@ -18,14 +18,41 @@ body
     form.searchbar
       input.searchbar_input(type="text" placeholder="keyword")
       input.searchbar_btn(type="submit" value="搜索")
-    .header-text
-      p.welcome WELCOME TO
-      h1.title 青春川大
+    .header-text#header-text
+      p.welcome
+        span WELCOME
+        span TO
+      h1#index-title.title
+        span 青
+        span 春
+        span 川
+        span 大
       .desc.mt1
         p
-          span 感受青春律动
-          span.ml2 释放青春活力
-        p —— 触手可及的川大共青团
+          span 感
+          span 受
+          span 青
+          span 春
+          span 律
+          span 动
+          span.ml2 释
+          span 放
+          span 青
+          span 春
+          span 活
+          span 力
+        p
+          span —— 
+          span 触
+          span 手
+          span 可
+          span 及
+          span 的
+          span 川
+          span 大
+          span 共
+          span 青
+          span 团
     nav.nav.clearfix.c-w.tc
       ul.navbar.mauto#navbar
         li
@@ -273,51 +300,7 @@ body
               a.link-rect.action 创新创业帮
       .tc
         .a.btn(href="#") 更多
-
-  footer.footer.clearfix.c-w#green-channel
-    .bg-layer
-    .container
-      .row
-        section.x-12.s-5.m-3.l-3.useful-links
-          h3 友情链接
-          ul
-            li
-              a(href="#") 四川大学
-            li
-              a(href="#") 教务处
-            li
-              a(href="#") 学工部
-            li
-              a(href="#") 国际合作与交流处
-            li
-              a(href="#") 青年之声
-            li
-              a(href="#") Myouth
-        section.x-12.s-7.m-6.l-6.contact-us
-          h3 联系我们
-          ul
-            li
-              span 共青团四川大学委员会邮箱
-              em scutw@163.com
-            li
-              span 新闻投稿邮箱
-              em scutwnews@qq.com
-            li
-              span 办公室,对外联络,科技创新,就业创业事宜
-              em 85401222
-            li
-              span 组织部,学生会,青年志愿,社会实践事宜
-              em 85407980
-            li
-              span 宣传部,文化艺术,团委公选课事宜
-              em 85406812
-            li
-              span 学生社团事宜
-              em 85998669
-        section.x-12.s-12.m-3.l-3.qr-code
-          h3 二维码
-          img(src="images/qr-code.png").img-qrcode.op7
-          p.qrcode-desc.op7 川大共青团
+  include footer
   script(type="text/javascript" src="js/melon.js")
   script(type="text/javascript" src="js/index.js")
 

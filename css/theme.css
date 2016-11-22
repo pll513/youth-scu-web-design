@@ -271,6 +271,145 @@ body {
   text-justify: distribute;
 }
 /**
+ *  横向图片链接
+ */
+.link-img-hz {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 116px;
+  border-bottom: 2px solid #bbb;
+}
+.link-img-hz_img-wrap {
+  position: absolute;
+  text-align: right;
+  margin: 18px 0;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 80px;
+  overflow: hidden;
+}
+.link-img-hz_img {
+  height: 100%;
+}
+.link-img-hz_text-wrap {
+  position: absolute;
+  left: 138px;
+  top: 15px;
+  overflow: hidden;
+}
+.link-img-hz_title {
+  text-align: justify;
+  -ms-text-justify: distribute;
+  text-justify: distribute;
+  font-size: 18px;
+  line-height: 22px;
+  color: #3c7090;
+  margin: 0;
+}
+.link-img-hz_info {
+  color: #999;
+  font-size: 14px;
+  margin: 0;
+}
+.link-img-hz_desc {
+  text-align: justify;
+  -ms-text-justify: distribute;
+  text-justify: distribute;
+  color: #666;
+  font-size: 15px;
+  line-height: 18px;
+  height: 36px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+/**
+ * 纵向导航栏
+ */
+.navbar-vt {
+  width: 200px;
+  margin: 0;
+  padding: 0;
+}
+.navbar-vt > li {
+  width: 100%;
+}
+.navbar-vt > li > a {
+  line-height: 40px;
+  display: block;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  background-color: #ddd;
+  color: #444;
+}
+.navbar-vt > li > a:hover {
+  background-color: #ccc;
+}
+.navbar-vt > li > a.curr {
+  background-color: #4ba2dd;
+}
+/**
+ * 页数导航栏
+ */
+.navbar-page {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #bbb;
+}
+.navbar-page_page,
+.navbar-page_prev,
+.navbar-page_next,
+.navbar-page_dots {
+  display: block;
+  float: left;
+  height: 30px;
+  font-size: 20px;
+  margin: 0 2px;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+}
+.navbar-page_page {
+  width: 40px;
+  background-color: #888;
+}
+.navbar-page_page.curr {
+  background-color: #60bcb1;
+}
+.navbar-page_prev,
+.navbar-page_next {
+  font-family: FontAwesome, sans-serif;
+  width: 60px;
+  background-color: #666;
+  color: #fff;
+}
+.navbar-page_prev:after,
+.navbar-page_next:after {
+  height: 100%;
+  line-height: 30px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+.navbar-page_prev:after {
+  content: "\f060";
+}
+.navbar-page_next:after {
+  content: "\f061";
+}
+.navbar-page_next {
+  content: "\f061";
+}
+.navbar-page_dots {
+  width: 40px;
+}
+/**
  * 按钮
  */
 .btn {
