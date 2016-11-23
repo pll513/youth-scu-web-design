@@ -4,7 +4,7 @@
   src: url('../fonts/raleway-light.eot') format('embedded-opentype'), url('../fonts/raleway-light.woff2') format('woff2'), url('../fonts/raleway-light.woff') format('woff'), url('../fonts/raleway-light.ttf') format('truetype'), url('../fonts/raleway-light.svg#RaleWay.svg') format('svg');
 }
 body {
-  font-family: Arial, Helvetica, sans-serif, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei';
+  font-family: PingFangSC-Light, Arial, Helvetica, sans-serif, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei';
 }
 .f-rw {
   font-family: 'Raleway', 'Microsoft YaHei', sans-serif;
@@ -13,17 +13,13 @@ body {
  * 方块链接
  */
 .link-square {
+  overflow: hidden;
+  position: relative;
   display: inline-block;
   width: 130px;
   height: 130px;
   text-align: center;
   color: #fff;
-  background-color: #45a59a;
-  -webkit-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
-  -moz-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
-  -ms-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
-  -o-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
-  transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
 }
 .link-square:hover {
   -webkit-transform: translate(0, -12px);
@@ -31,27 +27,50 @@ body {
   -ms-transform: translate(0, -12px);
   -o-transform: translate(0, -12px);
   transform: translate(0, -12px);
-  background-color: #1e4843 !important;
+}
+.link-square:hover .link-square_bg {
+  left: 0;
+  top: 0;
+}
+.link-square_bg {
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -ms-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s;
+  z-index: 1;
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: -150px;
+  top: -150px;
+  background: linear-gradient(135deg, #45a59a 47%, #fff 50%, #45a59a 53%);
+}
+.link-square_icon,
+.link-square_desc {
+  z-index: 9;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
 }
 .link-square_icon {
-  margin-top: 35px;
-  width: 100%;
-  bottom: 10px;
+  top: 35px;
 }
 .link-square_desc {
-  margin-top: 20px;
+  bottom: 10px;
 }
-.link-square.lighter {
-  background-color: #76c6bd;
+.link-square.lighter .link-square_bg {
+  background: linear-gradient(135deg, #76c6bd 47%, #fff 50%, #76c6bd 53%);
 }
-.link-square.light {
-  background-color: #5abaaf;
+.link-square.light .link-square_bg {
+  background: linear-gradient(135deg, #5abaaf 47%, #fff 50%, #5abaaf 53%);
 }
-.link-square.dark {
-  background-color: #39897f;
+.link-square.dark .link-square_bg {
+  background: linear-gradient(135deg, #39897f 47%, #fff 50%, #39897f 53%);
 }
-.link-square.darker {
-  background-color: #2d6c65;
+.link-square.darker .link-square_bg {
+  background: linear-gradient(135deg, #2d6c65 47%, #fff 50%, #2d6c65 53%);
 }
 /**
  * 长方形链接
@@ -492,7 +511,6 @@ body {
   height: 36px;
   border: 0;
   font-size: 16px;
-  opacity: 0.5;
 }
 .searchbar_btn {
   margin: 0;
@@ -504,7 +522,6 @@ body {
   color: #fff9b1;
   background-color: #c0b754;
   font-size: 16px;
-  opacity: 0.5;
 }
 .searchbar_btn:hover {
   background-color: #9b933e;

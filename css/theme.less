@@ -9,7 +9,7 @@
   src: url('../fonts/raleway-light.eot') format('embedded-opentype'), url('../fonts/raleway-light.woff2') format('woff2'), url('../fonts/raleway-light.woff') format('woff'), url('../fonts/raleway-light.ttf') format('truetype'), url('../fonts/raleway-light.svg#RaleWay.svg') format('svg');
 }
 body {
-  font-family: Arial, Helvetica, sans-serif, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei';
+  font-family: PingFangSC-Light, Arial, Helvetica, sans-serif, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei';
 }
 
 .f-rw {
@@ -24,45 +24,80 @@ body {
 @link-square-bg-color: #45a59a; // rgb(69,165,154)
 @link-square-size: 130px;
 .link-square {
+  overflow: hidden;
+  position: relative;
   display: inline-block;
   width: @link-square-size;
   height: @link-square-size;
   text-align: center;
   color: #fff;
-  background-color: @link-square-bg-color;
-  -webkit-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
-  -moz-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
-  -ms-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
-  -o-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
-  transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
+  //background-color: @link-square-bg-color;
+  //-webkit-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
+  //-moz-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
+  //-ms-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
+  //-o-transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
+  //transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
   &:hover {
     -webkit-transform: translate(0, -12px);
     -moz-transform: translate(0, -12px);
     -ms-transform: translate(0, -12px);
     -o-transform: translate(0, -12px);
     transform: translate(0, -12px);
-    background-color: #1e4843 !important; // hsl(173,41%,20%);
+    //background-color: #1e4843 !important; // hsl(173,41%,20%);
+  }
+  &:hover {
+    .link-square_bg {
+      left: 0;
+      top: 0;
+    }
   }
 }
-.link-square_icon {
-  margin-top: 35px;
+.link-square_bg {
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -ms-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s;
+  z-index: 1;
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: -150px;
+  top: -150px;
+  background: linear-gradient(135deg, #45a59a 47%, #fff 50% , #45a59a 53%);
+}
+.link-square_icon, .link-square_desc {
+  z-index: 9;
+  position: absolute;
   width: 100%;
-  bottom: 10px;
+  text-align: center;
+  left: 0;
+}
+.link-square_icon {
+  top: 35px;
 }
 .link-square_desc {
-  margin-top: 20px;
+  bottom: 10px;
 }
 .link-square.lighter {
-  background-color: #76c6bd; // hsl(173,41%,62%);
+  .link-square_bg {
+    background: linear-gradient(135deg, #76c6bd 47%, #fff 50%, #76c6bd 53%);
+  }
 }
 .link-square.light {
-  background-color: #5abaaf; // hsl(173,41%,54%);
+  .link-square_bg {
+    background: linear-gradient(135deg, #5abaaf 47%, #fff 50% , #5abaaf 53%);
+  }
 }
 .link-square.dark {
-  background-color: #39897f; // hsl(173,41%,38%);
+  .link-square_bg {
+    background: linear-gradient(135deg, #39897f 47%, #fff 50% , #39897f 53%);
+  }
 }
 .link-square.darker {
-  background-color: #2d6c65; // hsl(173,41%,30%);
+  .link-square_bg {
+    background: linear-gradient(135deg, #2d6c65 47%, #fff 50% , #2d6c65 53%);
+  }
 }
 
 
@@ -613,7 +648,6 @@ body {
   height: @searchbar-height;
   border: 0;
   font-size: 16px;
-  opacity:0.5;
 }
 .searchbar_btn {
   margin: 0;
@@ -625,7 +659,6 @@ body {
   color: @searchbar-btn-color;
   background-color: @searchbar-btn-bg-color;
   font-size: 16px;
-  opacity:0.5;
   &:hover {
     background-color: @searchbar-btn-hover-bg-color
   }

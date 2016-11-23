@@ -79,6 +79,9 @@
   right: 0;
   margin: auto;
 }
+.header .searchbar_input {
+  background: #fff;
+}
 .header .bg-img {
   position: absolute;
   bottom: 0;

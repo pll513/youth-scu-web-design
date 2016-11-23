@@ -11,7 +11,7 @@
   var len = texts.length;
   var showText = function(ele) {
     ele.style.visibility = 'visible';
-  }
+  };
   for (i = 0; i < len; ++i ) {
     (function(i){
       setTimeout(function() {
