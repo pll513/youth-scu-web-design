@@ -20,6 +20,7 @@ body {
   height: 130px;
   text-align: center;
   color: #fff;
+  background: #45a59a;
 }
 .link-square:hover {
   -webkit-transform: translate(0, -12px);
@@ -44,7 +45,8 @@ body {
   height: 280px;
   left: -150px;
   top: -150px;
-  background: linear-gradient(135deg, #45a59a 47%, #fff 50%, #45a59a 53%);
+  background: linear-gradient(135deg, #45a59a 46.5%, #fff 46.5%, #fff 53.5%, #45a59a 53.5%);
+  opacity: 0.5;
 }
 .link-square_icon,
 .link-square_desc {
@@ -61,16 +63,28 @@ body {
   bottom: 10px;
 }
 .link-square.lighter .link-square_bg {
-  background: linear-gradient(135deg, #76c6bd 47%, #fff 50%, #76c6bd 53%);
+  background: linear-gradient(135deg, #76c6bd 46.5%, #fff 46.5%, #fff 53.5%, #76c6bd 53.5%);
+}
+.link-square.lighter .link-square {
+  background: #76c6bd;
 }
 .link-square.light .link-square_bg {
-  background: linear-gradient(135deg, #5abaaf 47%, #fff 50%, #5abaaf 53%);
+  background: linear-gradient(135deg, #5abaaf 46.5%, #fff 46.5%, #fff 53.5%, #5abaaf 53.5%);
+}
+.link-square.light .link-square {
+  background: #5abaaf;
 }
 .link-square.dark .link-square_bg {
-  background: linear-gradient(135deg, #39897f 47%, #fff 50%, #39897f 53%);
+  background: linear-gradient(135deg, #39897f 46.5%, #fff 46.5%, #fff 53.5%, #39897f 53.5%);
+}
+.link-square.dark .link-square {
+  background: #39897f;
 }
 .link-square.darker .link-square_bg {
-  background: linear-gradient(135deg, #2d6c65 47%, #fff 50%, #2d6c65 53%);
+  background: linear-gradient(135deg, #2d6c65 46.5%, #fff 46.5%, #fff 53.5%, #2d6c65 53.5%);
+}
+.link-square.darker .link-square {
+  background: #2d6c65;
 }
 /**
  * 长方形链接

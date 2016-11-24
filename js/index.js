@@ -1,42 +1,109 @@
 /*
- ** banner打字效果
+ ** banner淡入效果
  */
 
-(function(doc) {
-  // var headerText = doc.getElementById('header-text');
-  // var texts = headerText.getElementsByTagName('span');
-  var texts = doc.querySelectorAll('#header-text span');
-  var i;
-  var currIndex = 0;
-  var len = texts.length;
-  var showText = function(ele) {
-    ele.style.visibility = 'visible';
-  };
-  for (i = 0; i < len; ++i ) {
-    (function(i){
-      setTimeout(function() {
-        showText(texts[i]);
-      }, 100 * i);
-    })(i);
-  }
+(function (doc) {
+  var i,
+    len,
+    headerTitle,
+    navArrowList;
+  
+  $('.header-bg').animate({
+    opacity: 1,
+    left: 0,
+    top: 0,
+    width: "100%",
+    height: "100%"
+  }, 2000).removeClass('circle');
+  
+  headerTitle = $('.header .title span');
+  navArrowList = $('.navbar a');
+  
+  setTimeout(function () {
+    $('.welcome').fadeTo(500, 0.8);
+    for (i = 0; len = headerTitle.length, i < len; ++i) {
+      (function (i) {
+        setTimeout(function () {
+          headerTitle.eq(i).fadeTo(500, 1);
+        }, 500 + 500 * i);
+      })(i);
+    }
+    setTimeout(function () {
+      $('.header .desc').animate({
+        top: 0
+      }, 500);
+      
+      setTimeout(function () {
+        $('.searchbar').animate({
+          top: 0
+        }, 500);
+  
+        for (i = 0; len = navArrowList.length, i < len; ++i) {
+          (function (i) {
+            setTimeout(function () {
+              navArrowList.eq(i).animate({
+                opacity: 0.8,
+                top: 0
+              }, 500)
+            }, 500 + 500 * i);
+          })(i);
+        }
+        
+      }, 500);
+      
+    }, 2500);
+    
+  }, 3000);
+  
+  
+  // var texts = doc.querySelectorAll('#header-text span');
+  // var i;
+  // // var currIndex = 0;
+  // var len = texts.length;
+  // var showText = function(ele) {
+  //   ele.style.visibility = 'visible';
+  // };
+  // for (i = 0; i < len; ++i ) {
+  //   (function(i){
+  //     setTimeout(function() {
+  //       showText(texts[i]);
+  //     }, 100 * i);
+  //   })(i);
+  // }
   // var tShowText = setInterval(function() {
   //   texts[currIndex++].style.visibility = 'visible';
   //   if (currIndex === len - 1) {
   //     clearInterval(tShowText);
   //   }
   // }, 100);
-  // setTimeout(function() {
-  //   texts[0].style.visibility = 'visible';
-  // }, 1000);
-  // setTimeout(function() {
-  //   texts[1].style.visibility = 'visible';
-  // }, 2000);
-  // setTimeout(function() {
-  //   texts[2].style.visibility = 'visible';
-  // }, 3000);
-  // setTimeout(function() {
-  //   texts[3].style.visibility = 'visible';
-  // }, 4000);
+})(document);
+
+
+/*
+ ** 播放器按钮
+ */
+
+(function (doc) {
+  var audio;
+  $('.music-control').click(function(e){
+    audio = doc.getElementsByTagName('audio')[0];
+    if ($(this).hasClass('play')) {
+      $(this).removeClass('play').addClass('pause');
+      if (!audio) {
+        audio = doc.createElement('audio');
+        audio.setAttribute('src', 'audio/seve.mp3');
+        audio.setAttribute('autoplay', 'true');
+        audio.setAttribute('loop', 'true');
+        doc.body.appendChild(audio);
+      } else {
+        audio.play();
+      }
+    } else {
+      $(this).removeClass('pause').addClass('play');
+      audio.pause();
+    }
+  });
+  
 })(document);
 
 
@@ -51,14 +118,14 @@
   var itemCnt = 10;   // 条目个数
   var tMove = null;
   var direction = -1;  // 滑动方向 左: -1 右: 1
-
+  
   var getMove = function (ele, direction, time) {
     var INTERVAL = 10;                                  // 动画间隔
     var moveCnt = (time - time % INTERVAL) / INTERVAL;  // 移动次数
     var step = 100 / moveCnt * direction;               // 每次移动的步长
     var start = parseFloat(ele.style.left);             // 起点
     var end;                                            // 终点
-
+    
     if (direction > 0) {
       // 向右滑动
       end = (Math.floor(start / 100) + 1) * 100;
@@ -95,7 +162,7 @@
       }
     }
   };
-
+  
   var slideLeft = function () {
     clearTimeout(tMove);
     var move = getMove(introList, -1, 500);
@@ -106,10 +173,10 @@
     var move = getMove(introList, 1, 500);
     tMove = setTimeout(move, 0);
   };
-
+  
   M.addListener(btnLeft, 'click', slideLeft);
   M.addListener(btnRight, 'click', slideRight);
-
+  
   var autoSlide = function autoSlide() {
     var start = parseFloat(introList.style.left);
     // 转方向的判定
@@ -118,7 +185,7 @@
       if (start === -(itemCnt - 1) * 100) {
         direction *= -1;
       }
-
+      
     } else {
       slideRight();
       if (start === 0) {
@@ -146,12 +213,12 @@
   var tMove = null;
   var tAutoSlide = null;
   var tEachSlide = null;
-
+  
   var pageCnt;      // 新闻页面个数
   var pagination;   // 分页按钮容器
   var page;         // 分页按钮
   var pages;        // 所有分页按钮对象
-
+  
   var i;
   var slideNews;        // 函数: 手动滑动新闻
   var autoSlide;        // 函数: 自动滑动新闻
@@ -163,7 +230,7 @@
   var currPageIndex = 0;    // 当前页面位置: 0,1,2,3 | 0,1,2 | 0,1
   var currIndex = 0;        // 当前新闻条目位置: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
   var AUTO_SLIDE_INTERVAL = 6000;
-
+  
   getPageSize = function () {
     var clientWidth = M.getPageWidth(); // 视窗宽度
     var pageSize;
@@ -178,7 +245,7 @@
     }
     return pageSize;
   };
-
+  
   var getMove = function (ele, startIndex, endIndex, time) {
     var INTERVAL = 10;
     var moveCnt = (time - time % INTERVAL) / INTERVAL;  // 移动次数
@@ -187,11 +254,11 @@
     var end = destArr[endIndex];                        // 终点
     
     step = 100 / moveCnt;
-
+    
     if (step === 0) {
       step = 100 / moveCnt;
     }
-
+    
     if (start < end) {
       // 向右滑动
       return function move() {
@@ -220,15 +287,15 @@
       }
     }
   };
-
+  
   var getMove2 = function (ele, startIndex, endIndex, time) {
-
+    
     var INTERVAL = 10;
     var moveCnt = (time - time % INTERVAL) / INTERVAL;  // 移动次数
     var step = 100 / (pageSize * moveCnt);              // 每次移动的步长
     var start = destArr2[startIndex];             // 起点
     var end = destArr2[endIndex];                 // 终点
-
+    
     if (start < end) {
       // 向右滑动
       step *= 2;
@@ -258,52 +325,52 @@
       }
     }
   };
-
+  
   var stopAutoSlide;
   var restartAutoSlide;
-
+  
   autoSlide = function autoSlide() {
     var nextIndex = (currIndex + 1) % (newsCnt - pageSize + 1);    // 下一条新闻的位置
     var index = destIndexArr.indexOf(nextIndex);  // 下一条新闻是否是最左边的
     var slide = getMove2(newsList, currIndex, nextIndex, 500);
-
+    
     if (index !== -1) {
       M.removeClass(pages[currPageIndex], 'active');
       M.addClass(pages[index], 'active');
       currPageIndex = index;
     }
     currIndex = nextIndex;
-
-
+    
+    
     tEachSlide = setTimeout(slide, 0);
     tAutoSlide = setTimeout(autoSlide, AUTO_SLIDE_INTERVAL);
   };
-
+  
   slideNews = function (endIndex) {
-
+    
     var move;
-
+    
     M.removeClass(pages[currPageIndex], 'active');
     M.addClass(pages[endIndex], 'active');
-
+    
     move = getMove(newsList, currIndex, endIndex, 1000);
     currIndex = destIndexArr[endIndex];
     currPageIndex = endIndex;
-
+    
     clearTimeout(tEachSlide);
     clearTimeout(tAutoSlide);
     tMove = setTimeout(move, 0);
     tAutoSlide = setTimeout(autoSlide, AUTO_SLIDE_INTERVAL);
   };
-
+  
   stopAutoSlide = function () {
     clearTimeout(tAutoSlide);
   };
-
+  
   restartAutoSlide = function () {
     tAutoSlide = setTimeout(autoSlide, AUTO_SLIDE_INTERVAL);
   };
-
+  
   initializeNewsList = function () {
     currLeftIndex = 0;
     currPageIndex = 0;
@@ -312,12 +379,12 @@
     destIndexArr2 = [];
     destArr = [];
     destArr2 = [];
-
+    
     pageSize = getPageSize();
     pageCnt = Math.ceil(newsCnt / pageSize);
     newsList.style.width = newsCnt * 100 / pageSize + '%';
     newsList.style.left = '0';
-
+    
     // 计算4个Arr
     for (i = 0; i < newsCnt; i += pageSize) {
       destIndexArr.push(i);
@@ -325,16 +392,16 @@
     while (destIndexArr[pageCnt - 1] + pageSize > newsCnt) {
       destIndexArr[pageCnt - 1] -= 1;
     }
-
+    
     for (i = 0; i < newsCnt; ++i) {
       destIndexArr2[i] = i;
       destArr2[i] = -i * 100 / pageSize;
     }
-
+    
     for (i = 0; i < pageCnt; ++i) {
       destArr[i] = destArr2[destIndexArr[i]];
     }
-
+    
     // 添加分页标签
     pagination = doc.createElement('div');
     pagination.className = 'news-pagination pa tc w';
@@ -347,35 +414,37 @@
     newsListWrap.appendChild(pagination);
     pages = M.getElementsByClassName('page', pagination);
     M.addClass(pages[0], 'active');
-
-
+    
+    
     // 添加分页标签点击事件
     for (i = 0; i < pageCnt; ++i) {
-
+      
       // 闭包绑定i
       (function (i) {
         M.addListener(pages[i], 'click', function () {
           clearTimeout(tMove);
-          tMove = setTimeout(function(){slideNews(i)}, 0);
+          tMove = setTimeout(function () {
+            slideNews(i)
+          }, 0);
         });
       })(i);
-
+      
     }
-
+    
     tAutoSlide = setTimeout(autoSlide, AUTO_SLIDE_INTERVAL);
-
+    
     M.addListener(newsList, 'mouseover', stopAutoSlide);
     M.addListener(newsList, 'mouseout', restartAutoSlide);
-
+    
   };
-
+  
   pageSize = getPageSize();
   initializeNewsList(pageSize);
-
+  
   w.onresize = function () {
     var pagination;
     var pageSizeNew = getPageSize();
-
+    
     if (pageSizeNew !== pageSize) {
       clearTimeout(tMove);
       clearTimeout(tEachSlide);
@@ -388,7 +457,7 @@
       initializeNewsList(pageSizeNew);
     }
   };
-
+  
 })(document, window);
 
 (function (doc, w) {
@@ -405,10 +474,10 @@
   var toggleBtn;      // 函数：交替按钮透明度
   var scrollToSection;  // 函数：跳转到对应部分
   var tScroll;
-
+  
   returnToTop = function (e) {
     var event = e || w.event;
-
+    
     if (event.preventDefault) {
       event.preventDefault();
     } else {
@@ -420,14 +489,14 @@
       clearTimeout(tScroll);
       M.scrollTo(0, 800);
     }
-
+    
   };
-
+  
   scrollToSection = function (e) {
     var event;
     var target;
     var targetClass;
-
+    
     event = e || w.event;
     if (event.preventDefault) {
       event.preventDefault();
@@ -451,7 +520,7 @@
       M.scrollTo(greenChannel.offsetTop, 800);
     }
   };
-
+  
   toggleBtn = function () {
     
     if (M.getScrollTop() > header.offsetHeight) {
@@ -462,10 +531,10 @@
   };
   
   setInterval(toggleBtn, 30);
-
+  
   M.addListener(returnTop, 'click', returnToTop);
   M.addListener(navBar, 'click', scrollToSection);
-
+  
 })(document, window);
 
 

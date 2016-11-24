@@ -20,12 +20,48 @@
 *.bg-layer {
   filter: alpha(opacity=50);
 }
+.searchbar-wrap {
+  position: absolute;
+  top: 470px;
+  right: 0;
+  left: 0;
+  width: 260px;
+  height: 36px;
+  margin: auto;
+  overflow: hidden;
+}
 .divider {
   display: block;
   margin: 25px auto 40px;
   width: 70px;
   height: 5px;
   background-color: #2d6c65;
+}
+.music-control {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
+.music-control:hover {
+  cursor: pointer;
+}
+.music-control:after {
+  font-family: FontAwesome, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+}
+.music-control.play:after {
+  content: "\f01d";
+}
+.music-control.pause:after {
+  content: "\f28c";
 }
 .return-top {
   display: none;
@@ -74,10 +110,8 @@
 }
 .header .searchbar {
   position: absolute;
-  top: 470px;
+  top: 36px;
   left: 0;
-  right: 0;
-  margin: auto;
 }
 .header .searchbar_input {
   background: #fff;
@@ -91,27 +125,41 @@
 .header .bg-layer {
   background-color: #1E4843;
 }
-.header .header-text {
-  width: 100%;
-  position: absolute;
-  top: 220px;
-  text-align: center;
-}
 .header .welcome {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 200px;
+  text-align: center;
   font-weight: 300;
   color: #fff;
   font-size: 40px;
   margin: 0;
+  opacity: 0;
 }
 .header .title {
+  position: absolute;
+  top: 240px;
   margin: 0;
   line-height: 116px;
   color: #fff;
+  width: 100%;
+  left: 0;
   text-align: center;
   font-size: 116px;
-  font-weight: 900;
+  font-weight: 700;
+}
+.header .desc-wrap {
+  top: 350px;
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
 }
 .header .desc {
+  position: absolute;
+  top: 60px;
+  width: 100%;
   font-size: 24px;
   font-weight: 300;
   color: #fff;
@@ -119,6 +167,8 @@
 }
 .header .desc p {
   margin: 0;
+  height: 30px;
+  line-height: 30px;
 }
 .header .nav {
   width: 100%;
@@ -126,7 +176,13 @@
   bottom: 80px;
 }
 .header .navbar {
+  overflow: hidden;
   display: inline-block;
+}
+.header .navbar a {
+  position: relative;
+  top: 40px;
+  opacity: 0;
 }
 @media (max-width: 767px) {
   .header .title {
@@ -137,8 +193,8 @@
     padding: 0 8px;
   }
 }
-.header-text span {
-  visibility: hidden;
+.header .title span {
+  opacity: 0;
 }
 /*
  ** 新闻
@@ -208,14 +264,37 @@
  ** 团委介绍
  */
 .header-bg {
+  overflow: hidden;
+  -webkit-transition: border-radius 3s;
+  -moz-transition: border-radius 3s;
+  -ms-transition: border-radius 3s;
+  -o-transition: border-radius 3s;
+  transition: border-radius 3s;
   position: fixed;
-  top: 0;
   z-index: -9;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
   background-image: url('../images/index-bg-3.jpg');
   -webkit-background-size: cover;
   background-size: cover;
+  opacity: 0;
+}
+.header-bg:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-color: #1E4843;
+}
+.header-bg.circle {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
 }
 .youth-league {
   height: 360px;
@@ -258,10 +337,30 @@
   height: 100%;
 }
 .youth-league .intro-wrap {
-  opacity: 0.9;
   float: left;
+  position: relative;
   height: 100%;
   width: 10%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+.youth-league .intro-wrap:after,
+.youth-league .intro-content {
+  z-index: 1;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.youth-league .intro-wrap:after {
+  opacity: 0.4;
+  background: #444;
+}
+.youth-league .intro-content {
+  z-index: 9;
 }
 .youth-league .red {
   background-color: #612d29;

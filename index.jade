@@ -11,56 +11,61 @@ head
   script(src="js/respond.min.js")
   <![endif]-->
 body
-  .header-bg
+  //audio(src="audio/seve.mp3" autoplay)
+  .music-control.play
+  .header-bg.circle
   a.return-top#return-top(href="#header")
   header.header#header
-    .bg-layer
-    form.searchbar
-      input.searchbar_input(type="text" placeholder="keyword")
-      input.searchbar_btn(type="submit" value="搜索")
-    .header-text#header-text
-      p.welcome.op8.f-rw.fl
-        span WELCOME
-        span.ml2 TO
-      h1.title
-        span 青
-        span 春
-        span 川
-        span 大
-      .desc.mt1.op8
-        p
-          span 感
-          span 受
-          span 青
-          span 春
-          span 律
-          span 动
-          span.ml2 释
-          span 放
-          span 青
-          span 春
-          span 活
-          span 力
-        p
-          span ——
-          span 触
-          span 手
-          span 可
-          span 及
-          span 的
-          span 川
-          span 大
-          span 共
-          span 青
-          span 团
+    .searchbar-wrap
+      form.searchbar
+        input.searchbar_input(type="text" placeholder="keyword")
+        input.searchbar_btn(type="submit" value="搜索")
+    p.welcome.f-rw.fl
+      span WELCOME
+      span.ml2 TO
+    h1.title
+      span 青
+      span 春
+      span 川
+      span 大
+    .desc-wrap.mt1
+      .desc.op8
+        p 感受青春律动释放青春活力
+          //span 感
+          //span 受
+          //span 青
+          //span 春
+          //span 律
+          //span 动
+          //span.ml2 释
+          //span 放
+          //span 青
+          //span 春
+          //span 活
+          //span 力
+        p —— 一触即发的川大共青团
+          //span ——
+          //span 触
+          //span 手
+          //span 可
+          //span 及
+          //span 的
+          //span 川
+          //span 大
+          //span 共
+          //span 青
+          //span 团
     nav.nav.clearfix.c-w.tc
       ul.navbar.mauto.op8#navbar
         li
           a.link-spec(href='#special') 专题
+          .a-cover
         li
           a.link-news(href='#news') 新闻
+          .a-cover
         li
           a.link-nt(href='#notice') 公告
+          .a-cover
         li
           a.link-yl(href='#youth-league') 川大团委
         li
@@ -187,7 +192,7 @@ body
             li
               a 关于组织开展“挑战杯”四川大学2016年学生科技节之第三届“墨香古韵”国学知识竞赛的通知
     .mt3.tc
-      a.btn.mauto 更多公告
+      a.btn.mauto 更多
   section.youth-league.pt5.clearfix#youth-league
     h2.title.f8.tc 川大团委
       span.op5.fl.ml1.f-rw ABOUT US
@@ -195,83 +200,93 @@ body
     button.arrow.left#yl-left
     button.arrow.right#yl-right
     .intro-list#intro-list(style="left:0;")
-      .intro-wrap.blue
-        .container
-          .row
-            section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
-              h3.f5.tc.group-name 团委秘书处
-              p.tc.group-intro 团委秘书处是校团委重要职能部门，负责校团委日常工作的开展，主要负责校团委办公室事务、
-              p.tc.group-intro 相关会议组织和财务工作等，是校团委的“大管家”。下设综合事务中心、信息管理中心、
-              p.tc.group-intro 交流活动中心和青年服务与发展中心。
-      .intro-wrap.green
-        .container
-          .row
-            section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
-              h3.f5.tc.group-name 学生会
-              p.tc.group-intro 四川大学学生会是川大本科学生自治组织，是成都市学生联合会主席单位。四川大学学生会致力于通过
-              p.tc.group-intro 各类型活动，全面服务川大同学，助力同学成长进步。下设办公室、宣传部、学术科技部、
-              p.tc.group-intro 文体部、外联部、学习部、权益部、素质拓展中心、公关礼仪部和女生部等
-              p.tc.group-intro 二级部门，同时分管四川大学学生电视台等的工作。
-      .intro-wrap.red
-        .container
-          .row
-            section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
-              h3.f5.tc.group-name 团委组织部
-              p.tc.group-intro 团委组织部是校团委重要职能部门，负责全校基层团建和团干培养工作。下设综合中心、
-              p.tc.group-intro 骨干培养中心、组织建设中心、基层工作中心、宣传中心
-              p.tc.group-intro 和“青马工程”专项办公室六大部门。
-      .intro-wrap.blue
-        .container
-          .row
-            section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
-              h3.f5.tc.group-name 团委宣传部
-              p.tc.group-intro 团委宣传部是校团委重要职能部门，肩负着引领学生思潮，助力学生成长的重任，负责全校团学系统
-              p.tc.group-intro 的宣传和全校青年的舆论引导工作。下设办公室、新媒体中心、网络部、创意设计部、企划部、
-              p.tc.group-intro 《川大人》报社、《川大共青团》杂志社和校园广播站等二级部门。
-      .intro-wrap.green
-        .container
-          .row
-            section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
-              h3.f5.tc.group-name 团委文化艺术部
-              p.tc.group-intro 团委文化艺术部是校团委重要职能部门，负责组织开展校园内大型学生文化艺术活动，
-              p.tc.group-intro 如凤舞川大、凤鸣川大等在全校内影响力大、知名度高的品牌活动，
-              p.tc.group-intro 是校园文化艺术活动主阵地。
-      .intro-wrap.red
-        .container
-          .row
-            section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
-              h3.f5.tc.group-name 团委创业就业促进部
-              p.tc.group-intro 团委创业就业促进部是校团委重要职能部门，旨在提升学生创新创业能力和促进学生就业。
-      .intro-wrap.blue
-        .container
-          .row
-            section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
-              h3.f5.tc.group-name 科协
-              p.tc.group-intro 四川大学学生学术科技协会是川大全校性质的学生学术科技联合组织，负责组织开展校内大型学术
-              p.tc.group-intro 科技竞赛和配合组织省级、国家级和国际级大赛在四川大学的开展工作。
-      .intro-wrap.green
-        .container
-          .row
-            section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
-              h3.f5.tc.group-name 青志
-              p.tc.group-intro 四川大学青年志愿者协会前为四川大学青年志愿者总队，始创于上世纪90年代，秉承志愿服务精神，
-              p.tc.group-intro 开展各类型、各层次青年志愿服务，展现川大学子的社会责任感和奉献心。
-      .intro-wrap.red
-        .container
-          .row
-            section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
-              h3.f5.tc.group-name 社团联
-              p.tc.group-intro 四川大学学生社团联合会，简称校社团联，是全校600余学生社团的综合管理和服务组织，负责对
-              p.tc.group-intro 包括学术性、文体型、实践型等在内的八大类学生社团进行监督、考核和服务。
-      .intro-wrap.blue
-        .container
-          .row
-            section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
-              h3.f5.tc.group-name 川大青年研究中心
-              p.tc.group-intro 川大共青团青年研究中心是全校性的青年研究中心，引导学生思潮，探究学生思想。
+      .intro-wrap(style="background-image:url('images/index-bg-10.jpg')")
+        .intro-content
+          .container
+            .row
+              section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
+                h3.f5.tc.group-name 团委秘书处
+                p.tc.group-intro 团委秘书处是校团委重要职能部门，负责校团委日常工作的开展，主要负责校团委办公室事务、
+                p.tc.group-intro 相关会议组织和财务工作等，是校团委的“大管家”。下设综合事务中心、信息管理中心、
+                p.tc.group-intro 交流活动中心和青年服务与发展中心。
+      .intro-wrap(style="background-image:url('images/index-bg-11.jpg')")
+        .intro-content
+          .container
+            .row
+              section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
+                h3.f5.tc.group-name 学生会
+                p.tc.group-intro 四川大学学生会是川大本科学生自治组织，是成都市学生联合会主席单位。四川大学学生会致力于通过
+                p.tc.group-intro 各类型活动，全面服务川大同学，助力同学成长进步。下设办公室、宣传部、学术科技部、
+                p.tc.group-intro 文体部、外联部、学习部、权益部、素质拓展中心、公关礼仪部和女生部等
+                p.tc.group-intro 二级部门，同时分管四川大学学生电视台等的工作。
+      .intro-wrap(style="background-image:url('images/index-bg-12.jpg')")
+        .intro-content
+          .container
+            .row
+              section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
+                h3.f5.tc.group-name 团委组织部
+                p.tc.group-intro 团委组织部是校团委重要职能部门，负责全校基层团建和团干培养工作。下设综合中心、
+                p.tc.group-intro 骨干培养中心、组织建设中心、基层工作中心、宣传中心
+                p.tc.group-intro 和“青马工程”专项办公室六大部门。
+      .intro-wrap(style="background-image:url('images/index-bg-10.jpg')")
+        .intro-content
+          .container
+            .row
+              section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
+                h3.f5.tc.group-name 团委宣传部
+                p.tc.group-intro 团委宣传部是校团委重要职能部门，肩负着引领学生思潮，助力学生成长的重任，负责全校团学系统
+                p.tc.group-intro 的宣传和全校青年的舆论引导工作。下设办公室、新媒体中心、网络部、创意设计部、企划部、
+                p.tc.group-intro 《川大人》报社、《川大共青团》杂志社和校园广播站等二级部门。
+      .intro-wrap(style="background-image:url('images/index-bg-11.jpg')")
+        .intro-content
+          .container
+            .row
+              section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
+                h3.f5.tc.group-name 团委文化艺术部
+                p.tc.group-intro 团委文化艺术部是校团委重要职能部门，负责组织开展校园内大型学生文化艺术活动，
+                p.tc.group-intro 如凤舞川大、凤鸣川大等在全校内影响力大、知名度高的品牌活动，
+                p.tc.group-intro 是校园文化艺术活动主阵地。
+      .intro-wrap(style="background-image:url('images/index-bg-12.jpg')")
+        .intro-content
+          .container
+            .row
+              section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
+                h3.f5.tc.group-name 团委创业就业促进部
+                p.tc.group-intro 团委创业就业促进部是校团委重要职能部门，旨在提升学生创新创业能力和促进学生就业。
+      .intro-wrap(style="background-image:url('images/index-bg-10.jpg')")
+        .intro-content
+          .container
+            .row
+              section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
+                h3.f5.tc.group-name 科协
+                p.tc.group-intro 四川大学学生学术科技协会是川大全校性质的学生学术科技联合组织，负责组织开展校内大型学术
+                p.tc.group-intro 科技竞赛和配合组织省级、国家级和国际级大赛在四川大学的开展工作。
+      .intro-wrap(style="background-image:url('images/index-bg-11.jpg')")
+        .intro-content
+          .container
+            .row
+              section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
+                h3.f5.tc.group-name 青志
+                p.tc.group-intro 四川大学青年志愿者协会前为四川大学青年志愿者总队，始创于上世纪90年代，秉承志愿服务精神，
+                p.tc.group-intro 开展各类型、各层次青年志愿服务，展现川大学子的社会责任感和奉献心。
+      .intro-wrap(style="background-image:url('images/index-bg-12.jpg')")
+          .intro-content
+            .container
+              .row
+                section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
+                  h3.f5.tc.group-name 社团联
+                  p.tc.group-intro 四川大学学生社团联合会，简称校社团联，是全校600余学生社团的综合管理和服务组织，负责对
+                  p.tc.group-intro 包括学术性、文体型、实践型等在内的八大类学生社团进行监督、考核和服务。
+      .intro-wrap(style="background-image:url('images/index-bg-10.jpg')")
+        .intro-content
+          .container
+            .row
+              section.l-8.m-10.s-12.x-12.l-offset-2.m-offset-1.s-offset-0.x-offset-0
+                h3.f5.tc.group-name 川大青年研究中心
+                p.tc.group-intro 川大共青团青年研究中心是全校性的青年研究中心，引导学生思潮，探究学生思想。
   section.student-ground#student-ground
-    h2.title.f8.c-grey-2.tc 学生园地
-      span.c-grey-4.fl.ml1.f-rw STUDENT
+    h2.title.f8.c-grey-2.tc 活动预告
+      span.c-grey-4.fl.ml1.f-rw ACTIVITY
     p.title-desc 感知最在地青春川大
     .divider
     .container
@@ -350,6 +365,7 @@ body
           h3 二维码
           img(src="images/qr-code.png").img-qrcode.op7
           p.qrcode-desc.op7 川大共青团
+  script(type="text/javascript" src="js/jquery-3.1.1.js")
   script(type="text/javascript" src="js/melon.js")
   script(type="text/javascript" src="js/index.js")
 
